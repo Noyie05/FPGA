@@ -1,0 +1,15 @@
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2019.2 (win64) Build 2708876 Wed Nov  6 21:40:23 MST 2019
+| Date         : Sun May 28 13:55:20 2023
+| Host         : 404NOTFOUND running 64-bit major release  (build 9200)
+| Command      : report_bus_skew -warn_on_violation -file led_bus_skew_routed.rpt -pb led_bus_skew_routed.pb -rpx led_bus_skew_routed.rpx
+| Design       : led
+| Device       : xa7z020-clg400
+| Speed File   : -1Q  PRODUCTION 1.09 2014-09-25
+------------------------------------------------------------------------------------------------------------------------------------------
+
+Bus Skew Report
+
+No bus skew constraints
+
