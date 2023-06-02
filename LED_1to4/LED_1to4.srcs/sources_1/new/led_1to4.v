@@ -2,7 +2,6 @@ module led_1to4(
     input  clk,
     input  rst,
 
-
     output reg [3:0] led
     );
     
@@ -33,59 +32,66 @@ module led_1to4(
                 state <=Idle;
                 led   <=led_d;
             end
-        case (state)
-            Idle: 
-            begin  
-                state<=led1;
-                led<=led_d;
-                led_cout<=32'b0;
+        else
+            begin
+                case (state)//状态机 Moore状态机 Mealy状态机需要预先设置一个前一状态
+                    Idle: 
+                    begin  
+                        state<=led1;
+                        led<=led_d;
+                        led_cout<=32'b0;
+                    end
+                    led1:  
+                    begin   
+                        counter(led,led1_l,led_cout);
+                        state<=led2;
+                    end
+                    led2:
+                    begin    
+                        counter(led,led2_l,led_cout);
+                        state<=led3;
+                    end   
+                    led3:
+                        begin
+                            counter(led,led3_l,led_cout);
+                            state<=led4;
+                        end
+                    led4:
+                        begin
+                            counter(led,led4_l,led_cout);
+                            state<=stop;
+                        end
+                    stop:
+                        begin
+                            counter(led,led_stop,led_cout);
+                            state<=clear;
+                        end
+                    clear:
+                        begin
+                            counter(led,clear,led_cout);
+                            state<=Idle;
+                        end
+                    default: state<=Idle;
+                        
+                    /*counter任务执行代码如下
+                    //counter begin//
+                    begin
+                        if(led_cout >= 32'd49_999_999)
+                        begin
+                        led <= led1_l;
+                        led_cout <= 32'd0;
+                        end
+                    else
+                        begin
+                        led <= led;
+                        led_cout <= led_cout + 32'd1;
+                        end
+                    end
+                    //counter end//
+                    作用是每1s给led带入不同的值
+                    */
+                endcase
             end
-            led1:  
-            begin   
-                counter(led,led1_l,led_cout);
-                state<=led2;
-            end
-            led2:
-            begin    
-                counter(led,led2_l,led_cout);
-                state<=led3;
-            end   
-            led3:
-                begin
-                    counter(led,led3_l,led_cout);
-                    state<=led4;
-                end
-            led4:
-                begin
-                    counter(led,led4_l,led_cout);
-                    state<=stop;
-                end
-            stop:
-                begin
-                    counter(led,led_stop,led_cout);
-                    state<=clear;
-                end
-            clear:
-                begin
-                    counter(led,clear,led_cout);
-                    state<=Idle;
-                end
-            default: state<=Idle;
-                
-            /*begin
-                if(led_cout >= 32'd49_999_999)
-                begin
-                 led <= led1_l;
-                 led_cout <= 32'd0;
-                end
-            else
-                begin
-                 led <= led;
-                 led_cout <= led_cout + 32'd1;
-                 end
-            end
-            */
-        endcase
         end
 task counter;
     inout led_task;
@@ -103,7 +109,20 @@ task counter;
                  led_task_cout <= led_task_cout + 32'd1;
                  end
      end
+     //Vivado Synthesis报了这样的一个Warning，如下
+     //‘led’同时被非阻塞和阻塞赋值 整体逻辑可能会发生改变
+     //Warning点对应的是各个Counter任务
+     //我认为可能是task里的led_task是以led=led_task的方式直接输出出来
 endtask
 //task end
+
+//以下是仿真测试 未完成
+/*
+    assign clk=0;
+    assign rst=1;
+
+    always 
+
+*/
 endmodule
        
