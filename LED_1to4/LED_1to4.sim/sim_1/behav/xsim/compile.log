@@ -1,4 +1,0 @@
-INFO: [VRFC 10-2263] Analyzing Verilog file "F:/FPGA/FPGA/LED_1to4/LED_1to4.srcs/sources_1/new/led_1to4.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module led_1to4
-INFO: [VRFC 10-2263] Analyzing Verilog file "F:/FPGA/FPGA/LED_1to4/LED_1to4.sim/sim_1/behav/xsim/glbl.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module glbl

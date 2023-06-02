@@ -116,13 +116,5 @@ task counter;
 endtask
 //task end
 
-//以下是仿真测试 未完成
-/*
-    assign clk=0;
-    assign rst=1;
-
-    always 
-
-*/
 endmodule
        
