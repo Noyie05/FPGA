@@ -1,7 +1,7 @@
 Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2019.2 (win64) Build 2708876 Wed Nov  6 21:40:23 MST 2019
-| Date         : Sun May 28 13:54:46 2023
+| Date         : Sun Jun  4 15:05:14 2023
 | Host         : 404NOTFOUND running 64-bit major release  (build 9200)
 | Command      : report_utilization -file led_utilization_placed.rpt -pb led_utilization_placed.pb
 | Design       : led
@@ -54,8 +54,8 @@ Table of Contents
 | 0     |            _ |         Set |            - |
 | 0     |            _ |       Reset |            - |
 | 0     |          Yes |           - |            - |
-| 0     |          Yes |           - |          Set |
-| 31    |          Yes |           - |        Reset |
+| 2     |          Yes |           - |          Set |
+| 29    |          Yes |           - |        Reset |
 | 0     |          Yes |         Set |            - |
 | 0     |          Yes |       Reset |            - |
 +-------+--------------+-------------+--------------+
@@ -172,7 +172,7 @@ Table of Contents
 +----------+------+---------------------+
 | Ref Name | Used | Functional Category |
 +----------+------+---------------------+
-| FDCE     |   31 |        Flop & Latch |
+| FDCE     |   29 |        Flop & Latch |
 | LUT5     |   26 |                 LUT |
 | CARRY4   |    7 |          CarryLogic |
 | LUT6     |    5 |                 LUT |
@@ -180,6 +180,7 @@ Table of Contents
 | OBUF     |    4 |                  IO |
 | LUT3     |    3 |                 LUT |
 | IBUF     |    2 |                  IO |
+| FDPE     |    2 |        Flop & Latch |
 | LUT4     |    1 |                 LUT |
 | BUFG     |    1 |               Clock |
 +----------+------+---------------------+

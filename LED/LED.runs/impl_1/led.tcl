@@ -68,7 +68,8 @@ set ACTIVE_STEP init_design
 set rc [catch {
   create_msg_db init_design.pb
   set_param chipscope.maxJobs 2
-  set_param synth.incrementalSynthesisCache C:/Users/Noyie05/AppData/Roaming/Xilinx/Vivado/.Xil/Vivado-14676-404NOTFOUND/incrSyn
+  set_param synth.incrementalSynthesisCache C:/Users/Noyie05/AppData/Roaming/Xilinx/Vivado/.Xil/Vivado-18176-404NOTFOUND/incrSyn
+  set_param xicom.use_bs_reader 1
   create_project -in_memory -part xa7z020clg400-1Q
   set_property design_mode GateLvl [current_fileset]
   set_param project.singleFileAddWarning.threshold 0

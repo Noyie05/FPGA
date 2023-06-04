@@ -1,7 +1,7 @@
 Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2019.2 (win64) Build 2708876 Wed Nov  6 21:40:23 MST 2019
-| Date         : Sun May 28 13:55:20 2023
+| Date         : Sun Jun  4 15:06:39 2023
 | Host         : 404NOTFOUND running 64-bit major release  (build 9200)
 | Command      : report_timing_summary -max_paths 10 -file led_timing_summary_routed.rpt -pb led_timing_summary_routed.pb -rpx led_timing_summary_routed.rpx -warn_on_violation
 | Design       : led
@@ -1553,16 +1553,16 @@ Sources:            { sys_clk }
 
 Check Type        Corner  Lib Pin  Reference Pin  Required(ns)  Actual(ns)  Slack(ns)  Location        Pin
 Min Period        n/a     BUFG/I   n/a            2.155         20.000      17.845     BUFGCTRL_X0Y16  sys_clk_IBUF_BUFG_inst/I
-Min Period        n/a     FDCE/C   n/a            1.000         20.000      19.000     SLICE_X112Y103  led_reg[0]/C
+Min Period        n/a     FDPE/C   n/a            1.000         20.000      19.000     SLICE_X112Y103  led_reg[0]/C
 Min Period        n/a     FDCE/C   n/a            1.000         20.000      19.000     SLICE_X112Y103  led_reg[1]/C
-Min Period        n/a     FDCE/C   n/a            1.000         20.000      19.000     SLICE_X112Y101  led_reg[2]/C
+Min Period        n/a     FDPE/C   n/a            1.000         20.000      19.000     SLICE_X112Y101  led_reg[2]/C
 Min Period        n/a     FDCE/C   n/a            1.000         20.000      19.000     SLICE_X112Y101  led_reg[3]/C
 Min Period        n/a     FDCE/C   n/a            1.000         20.000      19.000     SLICE_X113Y99   timer_cnt_reg[0]/C
 Min Period        n/a     FDCE/C   n/a            1.000         20.000      19.000     SLICE_X113Y101  timer_cnt_reg[10]/C
 Min Period        n/a     FDCE/C   n/a            1.000         20.000      19.000     SLICE_X113Y101  timer_cnt_reg[11]/C
 Min Period        n/a     FDCE/C   n/a            1.000         20.000      19.000     SLICE_X113Y102  timer_cnt_reg[12]/C
 Min Period        n/a     FDCE/C   n/a            1.000         20.000      19.000     SLICE_X113Y102  timer_cnt_reg[13]/C
-Low Pulse Width   Slow    FDCE/C   n/a            0.500         10.000      9.500      SLICE_X112Y103  led_reg[0]/C
+Low Pulse Width   Slow    FDPE/C   n/a            0.500         10.000      9.500      SLICE_X112Y103  led_reg[0]/C
 Low Pulse Width   Slow    FDCE/C   n/a            0.500         10.000      9.500      SLICE_X112Y103  led_reg[1]/C
 Low Pulse Width   Slow    FDCE/C   n/a            0.500         10.000      9.500      SLICE_X113Y103  timer_cnt_reg[16]/C
 Low Pulse Width   Slow    FDCE/C   n/a            0.500         10.000      9.500      SLICE_X113Y103  timer_cnt_reg[17]/C
@@ -1576,12 +1576,12 @@ High Pulse Width  Slow    FDCE/C   n/a            0.500         10.000      9.50
 High Pulse Width  Slow    FDCE/C   n/a            0.500         10.000      9.500      SLICE_X113Y99   timer_cnt_reg[1]/C
 High Pulse Width  Slow    FDCE/C   n/a            0.500         10.000      9.500      SLICE_X113Y99   timer_cnt_reg[2]/C
 High Pulse Width  Slow    FDCE/C   n/a            0.500         10.000      9.500      SLICE_X113Y99   timer_cnt_reg[3]/C
-High Pulse Width  Slow    FDCE/C   n/a            0.500         10.000      9.500      SLICE_X112Y103  led_reg[0]/C
-High Pulse Width  Fast    FDCE/C   n/a            0.500         10.000      9.500      SLICE_X112Y103  led_reg[0]/C
+High Pulse Width  Slow    FDPE/C   n/a            0.500         10.000      9.500      SLICE_X112Y103  led_reg[0]/C
+High Pulse Width  Fast    FDPE/C   n/a            0.500         10.000      9.500      SLICE_X112Y103  led_reg[0]/C
 High Pulse Width  Slow    FDCE/C   n/a            0.500         10.000      9.500      SLICE_X112Y103  led_reg[1]/C
 High Pulse Width  Fast    FDCE/C   n/a            0.500         10.000      9.500      SLICE_X112Y103  led_reg[1]/C
-High Pulse Width  Slow    FDCE/C   n/a            0.500         10.000      9.500      SLICE_X112Y101  led_reg[2]/C
-High Pulse Width  Fast    FDCE/C   n/a            0.500         10.000      9.500      SLICE_X112Y101  led_reg[2]/C
+High Pulse Width  Slow    FDPE/C   n/a            0.500         10.000      9.500      SLICE_X112Y101  led_reg[2]/C
+High Pulse Width  Fast    FDPE/C   n/a            0.500         10.000      9.500      SLICE_X112Y101  led_reg[2]/C
 
 
 

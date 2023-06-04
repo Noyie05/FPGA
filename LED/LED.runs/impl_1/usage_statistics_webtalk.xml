@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<webTalkData  fileName='usage_statistics_webtalk.xml'  majorVersion='1' minorVersion='0' timeStamp='Sun May 28 13:55:34 2023'>
+<webTalkData  fileName='usage_statistics_webtalk.xml'  majorVersion='1' minorVersion='0' timeStamp='Sun Jun  4 15:07:04 2023'>
 <section name="__ROOT__" level="0" order="1" description="">
  <section name="software_version_and_target_device" level="1" order="1" description="">
   <keyValuePair key="beta" value="FALSE" description="" />
   <keyValuePair key="build_version" value="2708876" description="" />
-  <keyValuePair key="date_generated" value="Sun May 28 13:55:34 2023" description="" />
+  <keyValuePair key="date_generated" value="Sun Jun  4 15:07:04 2023" description="" />
   <keyValuePair key="os_platform" value="WIN64" description="" />
   <keyValuePair key="product_version" value="Vivado v2019.2 (64-bit)" description="" />
   <keyValuePair key="project_id" value="3c10d4667cf04d6ab2ebd4179ded0889" description="" />
-  <keyValuePair key="project_iteration" value="1" description="" />
+  <keyValuePair key="project_iteration" value="2" description="" />
   <keyValuePair key="random_id" value="1c7a77b89c5151e594733a198b3b4652" description="" />
   <keyValuePair key="registration_id" value="1c7a77b89c5151e594733a198b3b4652" description="" />
   <keyValuePair key="route_design" value="TRUE" description="" />
@@ -154,7 +154,7 @@
    <keyValuePair key="output_load" value="5.000000" description="" />
    <keyValuePair key="output_toggle" value="12.500000" description="" />
    <keyValuePair key="package" value="clg400" description="" />
-   <keyValuePair key="pct_clock_constrained" value="0.000000" description="" />
+   <keyValuePair key="pct_clock_constrained" value="1.000000" description="" />
    <keyValuePair key="pct_inputs_defined" value="50" description="" />
    <keyValuePair key="platform" value="nt64" description="" />
    <keyValuePair key="process" value="typical" description="" />
@@ -343,7 +343,9 @@
    <keyValuePair key="carry4_functional_category" value="CarryLogic" description="" />
    <keyValuePair key="carry4_used" value="7" description="" />
    <keyValuePair key="fdce_functional_category" value="Flop &amp; Latch" description="" />
-   <keyValuePair key="fdce_used" value="31" description="" />
+   <keyValuePair key="fdce_used" value="29" description="" />
+   <keyValuePair key="fdpe_functional_category" value="Flop &amp; Latch" description="" />
+   <keyValuePair key="fdpe_used" value="2" description="" />
    <keyValuePair key="ibuf_functional_category" value="IO" description="" />
    <keyValuePair key="ibuf_used" value="2" description="" />
    <keyValuePair key="lut1_functional_category" value="LUT" description="" />
@@ -504,43 +506,18 @@
    <keyValuePair key="-verilog_define" value="default::[not_specified]" description="" />
   </section>
   <section name="usage" level="2" order="2" description="">
-   <keyValuePair key="elapsed" value="00:00:34s" description="" />
+   <keyValuePair key="elapsed" value="00:00:33s" description="" />
    <keyValuePair key="hls_ip" value="0" description="" />
-   <keyValuePair key="memory_gain" value="709.480MB" description="" />
-   <keyValuePair key="memory_peak" value="1171.090MB" description="" />
+   <keyValuePair key="memory_gain" value="712.395MB" description="" />
+   <keyValuePair key="memory_peak" value="1176.488MB" description="" />
   </section>
  </section>
- <section name="timing_constraints_wizard" level="1" order="9" description="">
-  <section name="usage" level="2" order="1" description="">
-   <keyValuePair key="accepted_async_clock_groups" value="0" description="" />
-   <keyValuePair key="accepted_combinational_paths" value="0" description="" />
-   <keyValuePair key="accepted_external_delays" value="0" description="" />
-   <keyValuePair key="accepted_false_paths" value="0" description="" />
-   <keyValuePair key="accepted_forwarded_clocks" value="0" description="" />
-   <keyValuePair key="accepted_generated_clocks" value="0" description="" />
-   <keyValuePair key="accepted_input_delays" value="0" description="" />
-   <keyValuePair key="accepted_log_excl_clock_groups" value="0" description="" />
-   <keyValuePair key="accepted_output_delays" value="0" description="" />
-   <keyValuePair key="accepted_phy_excl_clock_groups" value="0" description="" />
-   <keyValuePair key="accepted_primary_clocks" value="1" description="" />
-   <keyValuePair key="missing_async_clock_groups" value="0" description="" />
-   <keyValuePair key="missing_combinational_paths" value="0" description="" />
-   <keyValuePair key="missing_external_delays" value="0" description="" />
-   <keyValuePair key="missing_false_paths" value="0" description="" />
-   <keyValuePair key="missing_forwarded_clocks" value="0" description="" />
-   <keyValuePair key="missing_generated_clocks" value="0" description="" />
-   <keyValuePair key="missing_input_delays" value="0" description="" />
-   <keyValuePair key="missing_log_excl_clock_groups" value="0" description="" />
-   <keyValuePair key="missing_output_delays" value="0" description="" />
-   <keyValuePair key="missing_phy_excl_clock_groups" value="0" description="" />
-   <keyValuePair key="missing_primary_clocks" value="1" description="" />
-  </section>
- </section>
- <section name="unisim_transformation" level="1" order="10" description="">
+ <section name="unisim_transformation" level="1" order="9" description="">
   <section name="post_unisim_transformation" level="2" order="1" description="">
    <keyValuePair key="bufg" value="1" description="" />
    <keyValuePair key="carry4" value="8" description="" />
-   <keyValuePair key="fdce" value="33" description="" />
+   <keyValuePair key="fdce" value="31" description="" />
+   <keyValuePair key="fdpe" value="2" description="" />
    <keyValuePair key="gnd" value="2" description="" />
    <keyValuePair key="ibuf" value="2" description="" />
    <keyValuePair key="lut1" value="5" description="" />
@@ -554,7 +531,8 @@
   <section name="pre_unisim_transformation" level="2" order="2" description="">
    <keyValuePair key="bufg" value="1" description="" />
    <keyValuePair key="carry4" value="8" description="" />
-   <keyValuePair key="fdce" value="33" description="" />
+   <keyValuePair key="fdce" value="31" description="" />
+   <keyValuePair key="fdpe" value="2" description="" />
    <keyValuePair key="gnd" value="2" description="" />
    <keyValuePair key="ibuf" value="2" description="" />
    <keyValuePair key="lut1" value="5" description="" />
@@ -566,46 +544,89 @@
    <keyValuePair key="vcc" value="2" description="" />
   </section>
  </section>
- <section name="vivado_usage" level="1" order="11" description="">
+ <section name="vivado_usage" level="1" order="10" description="">
   <section name="gui_handlers" level="2" order="1" description="">
-   <keyValuePair key="basedialog_cancel" value="1" description="" />
-   <keyValuePair key="basedialog_ok" value="7" description="" />
-   <keyValuePair key="basedialog_yes" value="1" description="" />
+   <keyValuePair key="basedialog_apply" value="1" description="" />
+   <keyValuePair key="basedialog_cancel" value="4" description="" />
+   <keyValuePair key="basedialog_no" value="1" description="" />
+   <keyValuePair key="basedialog_ok" value="17" description="" />
+   <keyValuePair key="basedialog_yes" value="2" description="" />
+   <keyValuePair key="cmdmsgdialog_ok" value="2" description="" />
    <keyValuePair key="createconstraintsfilepanel_file_name" value="1" description="" />
    <keyValuePair key="createsrcfiledialog_file_name" value="1" description="" />
-   <keyValuePair key="filesetpanel_file_set_panel_tree" value="11" description="" />
-   <keyValuePair key="flownavigatortreepanel_flow_navigator_tree" value="20" description="" />
+   <keyValuePair key="filesetpanel_file_set_panel_tree" value="22" description="" />
+   <keyValuePair key="flownavigatortreepanel_flow_navigator_tree" value="32" description="" />
    <keyValuePair key="fpgachooser_family" value="1" description="" />
    <keyValuePair key="fpgachooser_fpga_table" value="1" description="" />
    <keyValuePair key="fpgachooser_package" value="1" description="" />
    <keyValuePair key="fpgachooser_speed" value="1" description="" />
    <keyValuePair key="gettingstartedview_create_new_project" value="1" description="" />
-   <keyValuePair key="mainmenumgr_window" value="6" description="" />
+   <keyValuePair key="gettingstartedview_open_project" value="1" description="" />
+   <keyValuePair key="hardwaretreepanel_hardware_tree_table" value="15" description="" />
+   <keyValuePair key="mainmenumgr_edit" value="2" description="" />
+   <keyValuePair key="mainmenumgr_file" value="6" description="" />
+   <keyValuePair key="mainmenumgr_floorplanning" value="1" description="" />
+   <keyValuePair key="mainmenumgr_io_planning" value="1" description="" />
+   <keyValuePair key="mainmenumgr_project" value="4" description="" />
+   <keyValuePair key="mainmenumgr_reports" value="6" description="" />
+   <keyValuePair key="mainmenumgr_timing" value="1" description="" />
+   <keyValuePair key="mainmenumgr_tools" value="6" description="" />
+   <keyValuePair key="mainmenumgr_window" value="8" description="" />
    <keyValuePair key="netlisttreeview_netlist_tree" value="4" description="" />
+   <keyValuePair key="pacommandnames_add_config_memory" value="1" description="" />
+   <keyValuePair key="pacommandnames_auto_connect_target" value="2" description="" />
+   <keyValuePair key="pacommandnames_close_project" value="2" description="" />
+   <keyValuePair key="pacommandnames_open_hardware_manager" value="1" description="" />
+   <keyValuePair key="pacommandnames_open_target" value="1" description="" />
    <keyValuePair key="pacommandnames_ports_window" value="1" description="" />
+   <keyValuePair key="pacommandnames_program_fpga" value="3" description="" />
+   <keyValuePair key="pacommandnames_run_implementation" value="3" description="" />
+   <keyValuePair key="paviews_project_summary" value="3" description="" />
    <keyValuePair key="primaryclockspanel_recommended_constraints_table" value="2" description="" />
+   <keyValuePair key="programfpgadialog_program" value="2" description="" />
+   <keyValuePair key="programfpgadialog_specify_bitstream_file" value="1" description="" />
    <keyValuePair key="progressdialog_background" value="1" description="" />
    <keyValuePair key="projectnamechooser_choose_project_location" value="2" description="" />
    <keyValuePair key="projectnamechooser_create_project_subdirectory" value="1" description="" />
    <keyValuePair key="projectnamechooser_project_name" value="2" description="" />
+   <keyValuePair key="rdicommands_custom_commands" value="2" description="" />
+   <keyValuePair key="rdicommands_paste" value="2" description="" />
+   <keyValuePair key="rdicommands_properties" value="1" description="" />
+   <keyValuePair key="rdicommands_settings" value="2" description="" />
+   <keyValuePair key="selectablelistpanel_selectable_list" value="1" description="" />
+   <keyValuePair key="settingsdialog_options_tree" value="9" description="" />
+   <keyValuePair key="settingseditorpage_enter_command_line_for_custom" value="1" description="" />
+   <keyValuePair key="settingseditorpage_use_this_drop_down_list_box_to_select" value="2" description="" />
    <keyValuePair key="signaltreepanel_signal_tree_table" value="16" description="" />
    <keyValuePair key="srcchooserpanel_create_file" value="1" description="" />
    <keyValuePair key="srcchooserpanel_scan_and_add_rtl_include_files_into" value="1" description="" />
+   <keyValuePair key="stalerundialog_open_design" value="1" description="" />
+   <keyValuePair key="syntheticagettingstartedview_recent_projects" value="1" description="" />
    <keyValuePair key="tclconsoleview_tcl_console_code_editor" value="5" description="" />
    <keyValuePair key="timingconstraintswizard_goto_constraints_summary_page" value="1" description="" />
   </section>
   <section name="java_command_handlers" level="2" order="2" description="">
    <keyValuePair key="addsources" value="1" description="" />
+   <keyValuePair key="autoconnecttarget" value="2" description="" />
+   <keyValuePair key="closeproject" value="2" description="" />
+   <keyValuePair key="editproperties" value="1" description="" />
+   <keyValuePair key="launchprogramfpga" value="2" description="" />
    <keyValuePair key="newproject" value="1" description="" />
-   <keyValuePair key="runbitgen" value="1" description="" />
-   <keyValuePair key="runsynthesis" value="4" description="" />
+   <keyValuePair key="openhardwaremanager" value="2" description="" />
+   <keyValuePair key="openproject" value="1" description="" />
+   <keyValuePair key="opentarget" value="1" description="" />
+   <keyValuePair key="runbitgen" value="3" description="" />
+   <keyValuePair key="runsynthesis" value="6" description="" />
    <keyValuePair key="savedesign" value="1" description="" />
    <keyValuePair key="showview" value="1" description="" />
-   <keyValuePair key="timingconstraintswizard" value="1" description="" />
-   <keyValuePair key="viewtaskrtlanalysis" value="1" description="" />
+   <keyValuePair key="timingconstraintswizard" value="3" description="" />
+   <keyValuePair key="toolssettings" value="2" description="" />
+   <keyValuePair key="viewtaskprogramanddebug" value="1" description="" />
+   <keyValuePair key="viewtaskrtlanalysis" value="2" description="" />
+   <keyValuePair key="viewtasksynthesis" value="1" description="" />
   </section>
   <section name="other_data" level="2" order="3" description="">
-   <keyValuePair key="guimode" value="1" description="" />
+   <keyValuePair key="guimode" value="4" description="" />
   </section>
   <section name="project_data" level="2" order="4" description="">
    <keyValuePair key="constraintsetcount" value="1" description="" />

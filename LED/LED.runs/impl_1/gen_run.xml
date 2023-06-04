@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="impl_1" LaunchPart="xa7z020clg400-1Q" LaunchTime="1685253200">
+<GenRun Id="impl_1" LaunchPart="xa7z020clg400-1Q" LaunchTime="1685862255">
   <File Type="BITSTR-BMM" Name="led_bd.bmm"/>
   <File Type="OPT-METHODOLOGY-DRC" Name="led_methodology_drc_opted.rpt"/>
   <File Type="INIT-TIMING" Name="led_timing_summary_init.rpt"/>
@@ -110,9 +110,7 @@
     </Config>
   </FileSet>
   <Strategy Version="1" Minor="2">
-    <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2019">
-      <Desc>Default settings for Implementation.</Desc>
-    </StratHandle>
+    <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2019"/>
     <Step Id="init_design"/>
     <Step Id="opt_design"/>
     <Step Id="power_opt_design"/>

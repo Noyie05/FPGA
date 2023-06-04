@@ -8,7 +8,7 @@ always@(posedge sys_clk or negedge rst_n)
     begin
         if (!rst_n)
             begin
-                led <= 4'd0 ;
+                led <= 4'b0101;
                 timer_cnt <= 32'd0 ;
             end
     else if(timer_cnt >= 32'd49_999_999)
