@@ -27,7 +27,7 @@ module led_1to4(
     
     always @(posedge clk or negedge rst) 
        begin
-        if (!rst) 
+        if (rst) 
             begin
                 state <=Idle;
                 led   <=led_d;

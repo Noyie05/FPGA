@@ -17,10 +17,7 @@ proc create_report { reportName command } {
     send_msg_id runtcl-5 warning "$msg"
   }
 }
-set_param synth.incrementalSynthesisCache C:/Users/Noyie05/AppData/Roaming/Xilinx/Vivado/.Xil/Vivado-4892-404NOTFOUND/incrSyn
-set_msg_config -id {Synth 8-256} -limit 10000
-set_msg_config -id {Synth 8-638} -limit 10000
-create_project -in_memory -part xc7vx485tffg1157-1
+create_project -in_memory -part xc7z020clg400-2
 
 set_param project.singleFileAddWarning.threshold 0
 set_param project.compositeFile.enableAutoGeneration 0
@@ -40,10 +37,13 @@ read_verilog -library xil_defaultlib F:/FPGA/FPGA/LED_1to4/LED_1to4.srcs/sources
 foreach dcp [get_files -quiet -all -filter file_type=="Design\ Checkpoint"] {
   set_property used_in_implementation false $dcp
 }
+read_xdc F:/FPGA/FPGA/LED_1to4/LED_1to4.srcs/constrs_1/new/led.xdc
+set_property used_in_implementation false [get_files F:/FPGA/FPGA/LED_1to4/LED_1to4.srcs/constrs_1/new/led.xdc]
+
 set_param ips.enableIPCacheLiteLoad 1
 close [open __synthesis_is_running__ w]
 
-synth_design -top led_1to4 -part xc7vx485tffg1157-1
+synth_design -top led_1to4 -part xc7z020clg400-2
 
 
 # disable binary constraint mode for synth run checkpoints
