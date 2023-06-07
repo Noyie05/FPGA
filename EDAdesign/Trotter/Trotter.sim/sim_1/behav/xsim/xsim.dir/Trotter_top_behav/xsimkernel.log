@@ -1,0 +1,4 @@
+Running: xsim.dir/Trotter_top_behav/xsimk.exe -simmode gui -wdb Trotter_top_behav.wdb -simrunnum 0 -socket 1612
+Design successfully loaded
+Design Loading Memory Usage: 6048 KB (Peak: 6048 KB)
+Design Loading CPU Usage: 31 ms
