@@ -55,12 +55,12 @@ module Trotter_top(
     
     
 task automatic task_counter;
-    inout  task_count;
+    input  task_count;
     inout  task_rep;
      begin
-            if(task_count == 32'd1_000)
+            if(task_count >= 32'd1_000)
                 begin
-                 task_rep = task_rep+1;
+                 task_rep = (task_rep+1'b1);
                  task_count = 32'd0;
                 end
             else
