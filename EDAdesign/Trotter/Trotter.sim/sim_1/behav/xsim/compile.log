@@ -1,4 +1,0 @@
-INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Project/FPGA/FPGA/EDAdesign/Trotter/Trotter.srcs/sources_1/new/Trotter.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module Trotter
-INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Project/FPGA/FPGA/EDAdesign/Trotter/Trotter.srcs/sources_1/new/Trotter_top.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module Trotter_top

@@ -57,7 +57,7 @@ module Trotter(
                     begin
                         if(repeat_2==1)
                          begin
-                            task_counter(count,repeat_2,32'd1000);  
+                            task_counter(count,repeat_2,32'd10);  
                             my_task_model1(count,Y,repeat_7,32'd1);
                             repeat_2<=0;
                             sel<=model_2;
@@ -65,7 +65,7 @@ module Trotter(
                          end
                         else
                          begin
-                            task_counter(count,repeat_2,1000);
+                            task_counter(count,repeat_2,10);
                             my_task_model1(count,Y,repeat_7,1);
                          end
                     end
