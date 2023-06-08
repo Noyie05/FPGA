@@ -79,24 +79,20 @@ task automatic my_task_model1;
     input [31:0] Max_repeat;
     
     begin
-      // if(repeat_count==15)
-      //   begin
-      //       task_counter(task_count,repeat_count,Max_repeat);
-      //       task_Y[15-repeat_count]=task_Y[15-repeat_count]^1;   
-      //       repeat_count=0;
-      //       task_Y=Idle;
-      //   end
-      // else if(repeat_count>=8) //当repeat_count==8�? task_Y=8’b00000000
-      //   begin
-      //   task_counter(task_count,repeat_count,Max_repeat);
-      //   task_Y[15-repeat_count]=task_Y[15-repeat_count]^1;
-      //   end
-      // else
-      //   begin
+        @(posedge sys_clk);
         task_counter(task_count,repeat_count,Max_repeat);
-        task_Y[8-repeat_count]=task_Y[8-repeat_count]^1;
-        my_task_model1(task_count,task_Y,repeat_count,100);
-        // end
+        if(repeat_count==15)
+            begin
+                task_Y[15-repeat_count]=task_Y[15-repeat_count]^1;   
+            end
+        else if(repeat_count>=8) //当repeat_count==8�? task_Y=8’b00000000
+            begin
+                task_Y[15-repeat_count]=task_Y[15-repeat_count]^1;
+            end
+        else
+            begin
+                task_Y[8-repeat_count]=task_Y[8-repeat_count]^1;
+            end
     end 
 endtask
 
