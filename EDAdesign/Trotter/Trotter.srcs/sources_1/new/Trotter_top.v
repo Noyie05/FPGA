@@ -74,25 +74,27 @@ endtask
 
 task automatic my_task_model1;
     input  task_count;
-    inout [7:0] task_Y;
-    inout [3:0] repeat_count;
+    inout [8:0] task_Y;
+    inout [4:0] repeat_count;
     input [31:0] Max_repeat;
     
     begin
-        @(posedge sys_clk);
-        task_counter(task_count,repeat_count,Max_repeat);
         if(repeat_count==15)
             begin
-                task_Y[15-repeat_count]=task_Y[15-repeat_count]^1;   
+                task_Y[0]=task_Y[0]^1;   
+
             end
         else if(repeat_count>=8) //当repeat_count==8�? task_Y=8’b00000000
             begin
-                task_Y[15-repeat_count]=task_Y[15-repeat_count]^1;
+                task_Y[16-repeat_count]=task_Y[16-repeat_count]^1;
+                task_counter(task_count,repeat_count,Max_repeat);
             end
         else
             begin
                 task_Y[8-repeat_count]=task_Y[8-repeat_count]^1;
+                task_counter(task_count,repeat_count,Max_repeat);
             end
+        my_task_model1(task_count,task_Y,repeat_count,1);
     end 
 endtask
 
