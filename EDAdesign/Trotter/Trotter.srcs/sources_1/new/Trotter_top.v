@@ -57,121 +57,123 @@ module Trotter_top(
 task automatic task_counter;
     input  task_count;
     inout  task_rep;
+    input  [31:0] max_repeat;
      begin
-            if(task_count >= 32'd1_000)
+            if(task_count >= max_repeat)                //规定上限count
                 begin
-                 task_rep = (task_rep+1'b1);
-                 task_count = 32'd0;
+                  task_rep = (task_rep+1'b1);
                 end
             else
                 begin
+                 task_count = (task_count + 32'd1);
                  task_rep = task_rep;
-                 task_count = task_count + 32'd1;
+                 task_counter(task_count,task_rep,1); //上限为1
                  end
      end
 endtask
 
-task my_task_model1;
-    inout  task_count;
+task automatic my_task_model1;
+    input  task_count;
     inout [7:0] task_Y;
     inout [3:0] repeat_count;
+    input [31:0] Max_repeat;
     
     begin
       if(repeat_count==15)
         begin
-            task_counter(task_count,repeat_count);
+            task_counter(task_count,repeat_count,Max_repeat);
             task_Y[15-repeat_count]=task_Y[15-repeat_count]^1;   
             repeat_count=0;
             task_Y=Idle;
-
         end
       else if(repeat_count>=8) //当repeat_count==8时 task_Y=8’b00000000
         begin
-        task_counter(task_count,repeat_count);
+        task_counter(task_count,repeat_count,Max_repeat);
         task_Y[15-repeat_count]=task_Y[15-repeat_count]^1;
         end
       else
         begin
-        task_counter(task_count,repeat_count);
-        task_Y[7-repeat_count]=task_Y[7-repeat_count]^1;
+        task_counter(task_count,repeat_count,Max_repeat);
+        task_Y[8-repeat_count]=task_Y[8-repeat_count]^1;
+        my_task_model1(task_count,task_Y,repeat_count,0);
         end
     end 
 endtask
 
-task my_task_model2;//前面四个灯为7~4 后面四个灯为3~0
-    inout  task_count;
-    inout [7:0] task_Y;
-    input [3:0] repeat_count;
+// task my_task_model2;//前面四个灯为7~4 后面四个灯为3~0
+//     inout  task_count;
+//     inout [7:0] task_Y;
+//     input [3:0] repeat_count;
     
-    begin
-      if(repeat_count==8)
-         begin
-            task_counter(task_count,repeat_count);
-            task_Y[11-repeat_count]=task_Y[11-repeat_count]^1;
-            task_Y[repeat_count-4]=task_Y[repeat_count-4]^1;
-            repeat_count=0;
-         end
-      else if(repeat_count>=4) //当repeat_count==4时 task_Y=8’b00000000
-        begin
-        task_counter(task_count,repeat_count);
-        task_Y[11-repeat_count]=task_Y[11-repeat_count]^1;
-        task_Y[repeat_count-4]=task_Y[repeat_count-4]^1;
-        end
-      else
-        begin
-        task_counter(task_count,repeat_count);
-        task_Y[7-repeat_count]=task_Y[7-repeat_count]^1;
-        task_Y[repeat_count]=task_Y[repeat_count]^1;
-        end
-    end 
-endtask
+//     begin
+//       if(repeat_count==8)
+//          begin
+//             task_counter(task_count,repeat_count);
+//             task_Y[11-repeat_count]=task_Y[11-repeat_count]^1;
+//             task_Y[repeat_count-4]=task_Y[repeat_count-4]^1;
+//             repeat_count=0;
+//          end
+//       else if(repeat_count>=4) //当repeat_count==4时 task_Y=8’b00000000
+//         begin
+//         task_counter(task_count,repeat_count);
+//         task_Y[11-repeat_count]=task_Y[11-repeat_count]^1;
+//         task_Y[repeat_count-4]=task_Y[repeat_count-4]^1;
+//         end
+//       else
+//         begin
+//         task_counter(task_count,repeat_count);
+//         task_Y[7-repeat_count]=task_Y[7-repeat_count]^1;
+//         task_Y[repeat_count]=task_Y[repeat_count]^1;
+//         end
+//     end 
+// endtask
 
-task my_task_model3;//前面四个灯为7~4 后面四个灯为3~0
-    inout  task_count;
-    inout [7:0] task_Y;//默认输入是11110000
-    input [3:0] repeat_count;//默认输入是0
+// task my_task_model3;//前面四个灯为7~4 后面四个灯为3~0
+//     inout  task_count;
+//     inout [7:0] task_Y;//默认输入是11110000
+//     input [3:0] repeat_count;//默认输入是0
     
-    begin
-      if(repeat_count==15) 
-       begin
-         task_counter(task_count,repeat_count);
-         task_Y=8'b11110000;
-        end
-      else if(repeat_count>7) 
-         begin
-          task_counter(task_count,repeat_count);
-          task_Y[15-repeat_count]=task_Y[15-repeat_count]^1;
-         end
-      else  
-         begin
-          task_counter(task_count,repeat_count);
-          task_Y[7-repeat_count]=task_Y[7-repeat_count]^1;
-         end
-    end 
-endtask
+//     begin
+//       if(repeat_count==15) 
+//        begin
+//          task_counter(task_count,repeat_count);
+//          task_Y=8'b11110000;
+//         end
+//       else if(repeat_count>7) 
+//          begin
+//           task_counter(task_count,repeat_count);
+//           task_Y[15-repeat_count]=task_Y[15-repeat_count]^1;
+//          end
+//       else  
+//          begin
+//           task_counter(task_count,repeat_count);
+//           task_Y[7-repeat_count]=task_Y[7-repeat_count]^1;
+//          end
+//     end 
+// endtask
 
-task my_task_model4;//流水灯
-    inout  task_count;
-    inout [7:0] task_Y;//默认输入是11111111
-    input [3:0] repeat_count;//默认输入是0
+// task my_task_model4;//流水灯
+//     inout  task_count;
+//     inout [7:0] task_Y;//默认输入是11111111
+//     input [3:0] repeat_count;//默认输入是0
     
-    begin
-      task_Y=Idle;
-      if(repeat_count==15) 
-       begin
-         task_counter(task_count,repeat_count);
-         task_Y=Idle;
-        end
-      else if(repeat_count>7) 
-         begin
-          task_counter(task_count,repeat_count);
-          task_Y[15-repeat_count]=task_Y[15-repeat_count]^1;
-         end
-      else  
-         begin
-          task_counter(task_count,repeat_count);
-          task_Y[7-repeat_count]=task_Y[7-repeat_count]^1;
-         end
-    end 
-endtask
+//     begin
+//       task_Y=Idle;
+//       if(repeat_count==15) 
+//        begin
+//          task_counter(task_count,repeat_count);
+//          task_Y=Idle;
+//         end
+//       else if(repeat_count>7) 
+//          begin
+//           task_counter(task_count,repeat_count);
+//           task_Y[15-repeat_count]=task_Y[15-repeat_count]^1;
+//          end
+//       else  
+//          begin
+//           task_counter(task_count,repeat_count);
+//           task_Y[7-repeat_count]=task_Y[7-repeat_count]^1;
+//          end
+//     end 
+// endtask
 endmodule
