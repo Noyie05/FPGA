@@ -39,7 +39,7 @@ module Trotter(
               model_3=2'b10,
               model_4=2'b11;
               
-    parameter Idle =8'b11111111,
+    parameter Idle =8'b0,
               Special=8'b11110000;
 
 
@@ -57,19 +57,17 @@ module Trotter(
              case(sel)
                  model_1:
                     begin
-                        // if(repeat_2==1)
-                        //  begin
-                        //     task_counter(count,repeat_2,32'd10);  
-                        //     my_task_model1(count,Y,repeat_7,10);
-                        //     repeat_2<=0;
-                        //     sel<=model_2;
-                        //     Y<=Idle;
-                        //  end
-                        // else
-                        //  begin
-                            task_counter(count,repeat_2,10);
-                            my_task_model1(count,Y,repeat_7,100,i);
-                        //  end
+                        if(repeat_2==1)
+                         begin
+                            task_counter(count,repeat_2,1000);  
+                            my_task_model1(count,Y,repeat_7,100,sel,2'b01);
+                            repeat_2<=0;
+                         end
+                        else
+                         begin
+                            task_counter(count,repeat_2,1000);
+                            my_task_model1(count,Y,repeat_7,100,sel,2'b00);
+                         end
                     end
                //   model_2:
                //      begin

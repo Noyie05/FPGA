@@ -75,55 +75,63 @@ endtask
 task automatic my_task_model1;
     input [31:0] task_count;
     inout [8:0] task_Y;
-    inout repeat_count;
+    inout [7:0]repeat_count;
     input [31:0] Max_repeat;
-    input  i;
+    output   out_state;
+    input  in_state; 
      
     begin
-        for ( repeat_count=0; repeat_count==16;repeat_count=(repeat_count+1) ) 
-            begin
-                // if (repeat_count>=8) 
-                // begin
-                //     $display("For the Emperor!!!!!!!!!!!!!!!!!");
-                //     task_counter(task_count,i,Max_repeat);
-                //     task_Y[15-repeat_count]=task_Y[15-repeat_count]^1;
-                // end
-                // else        
-                    // begin
-                    task_counter(task_count,i,Max_repeat);
-                    task_Y[7-repeat_count]=task_Y[7-repeat_count]^1;
-                    // end
-            end    
-    end
-endtask
 
-// task my_task_model2;//前面四个灯为7~4 后面四个灯为3~0
-//     inout  task_count;
-//     inout [7:0] task_Y;
-//     input [3:0] repeat_count;
-    
-//     begin
-//       if(repeat_count==8)
-//          begin
-//             task_counter(task_count,repeat_count);
-//             task_Y[11-repeat_count]=task_Y[11-repeat_count]^1;
-//             task_Y[repeat_count-4]=task_Y[repeat_count-4]^1;
-//             repeat_count=0;
-//          end
-//       else if(repeat_count>=4) //当repeat_count==4�? task_Y=8’b00000000
-//         begin
-//         task_counter(task_count,repeat_count);
-//         task_Y[11-repeat_count]=task_Y[11-repeat_count]^1;
-//         task_Y[repeat_count-4]=task_Y[repeat_count-4]^1;
-//         end
-//       else
-//         begin
-//         task_counter(task_count,repeat_count);
-//         task_Y[7-repeat_count]=task_Y[7-repeat_count]^1;
-//         task_Y[repeat_count]=task_Y[repeat_count]^1;
-//         end
-//     end 
+        case(repeat_count)
+        8'd0,8'd1,8'd2,8'd3,8'd4,8'd5,8'd6,8'd7:
+          begin
+            task_Y[7-repeat_count]=task_Y[7-repeat_count]^1;
+            task_counter(task_count,repeat_count,Max_repeat);
+          end
+        8'd8,8'd9,8'd10,8'd11,8'd12,8'd13,8'd14:
+          begin
+            task_Y[15-repeat_count]=task_Y[15-repeat_count]^1;
+            task_counter(task_count,repeat_count,Max_repeat);
+          end
+        8'd15:
+          begin
+              task_Y[0]=task_Y[0];
+              task_counter(task_count,repeat_count,Max_repeat);
+              task_Y=8'h00;
+              out_state=in_state;
+          end
+        default :out_state=in_state;
+        endcase
+    end
 // endtask
+
+// // task my_task_model2;//前面四个灯为7~4 后面四个灯为3~0
+// //     inout  task_count;
+// //     inout [7:0] task_Y;
+// //     input [3:0] repeat_count;
+    
+// //     begin
+// //       if(repeat_count==8)
+// //          begin
+// //             task_counter(task_count,repeat_count);
+// //             task_Y[11-repeat_count]=task_Y[11-repeat_count]^1;
+// //             task_Y[repeat_count-4]=task_Y[repeat_count-4]^1;
+// //             repeat_count=0;
+// //          end
+// //       else if(repeat_count>=4) //当repeat_count==4�? task_Y=8’b00000000
+// //         begin
+// //         task_counter(task_count,repeat_count);
+// //         task_Y[11-repeat_count]=task_Y[11-repeat_count]^1;
+// //         task_Y[repeat_count-4]=task_Y[repeat_count-4]^1;
+// //         end
+// //       else
+// //         begin
+// //         task_counter(task_count,repeat_count);
+// //         task_Y[7-repeat_count]=task_Y[7-repeat_count]^1;
+// //         task_Y[repeat_count]=task_Y[repeat_count]^1;
+// //         end
+// //     end 
+// // endtask
 
 // task my_task_model3;//前面四个灯为7~4 后面四个灯为3~0
 //     inout  task_count;
