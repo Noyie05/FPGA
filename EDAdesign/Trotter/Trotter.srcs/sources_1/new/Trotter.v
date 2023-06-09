@@ -31,6 +31,7 @@ module Trotter(
     reg [31:0] count;
     reg [7:0] Y;
     reg[1:0] sel;
+    reg [31:0]i;
     
     parameter 
               model_1=2'b00,
@@ -50,6 +51,7 @@ module Trotter(
                 count<=0;  
                 Y<=Idle; 
                 sel<=S;
+                i<=0;
              end
             else 
              case(sel)
@@ -66,7 +68,7 @@ module Trotter(
                         // else
                         //  begin
                             task_counter(count,repeat_2,10);
-                            my_task_model1(count,Y,repeat_7,10);
+                            my_task_model1(count,Y,repeat_7,100,i);
                         //  end
                     end
                //   model_2:

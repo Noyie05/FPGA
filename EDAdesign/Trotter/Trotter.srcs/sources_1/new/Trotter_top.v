@@ -77,21 +77,22 @@ task automatic my_task_model1;
     inout [8:0] task_Y;
     inout repeat_count;
     input [31:0] Max_repeat;
-    
+    input  i;
+     
     begin
         for ( repeat_count=0; repeat_count==16;repeat_count=(repeat_count+1) ) 
             begin
-                if (repeat_count>=8) 
-                begin
-                    $display("For the Emperor!!!!!!!!!!!!!!!!!");
-                    task_counter(task_count,i,Max_repeat);
-                    task_Y[15-repeat_count]=task_Y[15-repeat_count]^1;
-                end
-                else       
-                    begin
+                // if (repeat_count>=8) 
+                // begin
+                //     $display("For the Emperor!!!!!!!!!!!!!!!!!");
+                //     task_counter(task_count,i,Max_repeat);
+                //     task_Y[15-repeat_count]=task_Y[15-repeat_count]^1;
+                // end
+                // else        
+                    // begin
                     task_counter(task_count,i,Max_repeat);
                     task_Y[7-repeat_count]=task_Y[7-repeat_count]^1;
-                    end
+                    // end
             end    
     end
 endtask
