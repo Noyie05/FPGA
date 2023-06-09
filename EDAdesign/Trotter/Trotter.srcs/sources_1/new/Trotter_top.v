@@ -119,7 +119,7 @@ task automatic my_task_model2;//前面四个灯为7~4 后面四个灯为3~0
         8'd0,8'd1,8'd2,8'd3:
           begin
             task_Y[7-repeat_count]=task_Y[7-repeat_count]^1;
-            task_Y[repeat_count-4]=task_Y[repeat_count-4]^1;
+            task_Y[repeat_count]=task_Y[repeat_count]^1;
             task_counter(task_count,repeat_count,Max_repeat);
           end
         8'd4,8'd5,8'd6,8'd6:
@@ -130,7 +130,7 @@ task automatic my_task_model2;//前面四个灯为7~4 后面四个灯为3~0
           end
         8'd7:
           begin
-              task_Y[0]=task_Y[0];
+              task_Y[3]=task_Y[3];
               task_Y[4]=task_Y[4];
               task_counter(task_count,repeat_count,Max_repeat);
               task_Y=8'h00;
@@ -145,29 +145,40 @@ task automatic my_task_model2;//前面四个灯为7~4 后面四个灯为3~0
     end 
 endtask
 
-// task my_task_model3;//前面四个灯为7~4 后面四个灯为3~0
-//     inout  task_count;
-//     inout [7:0] task_Y;//默认输入�?11110000
-//     input [3:0] repeat_count;//默认输入�?0
-    
-//     begin
-//       if(repeat_count==15) 
-//        begin
-//          task_counter(task_count,repeat_count);
-//          task_Y=8'b11110000;
-//         end
-//       else if(repeat_count>7) 
-//          begin
-//           task_counter(task_count,repeat_count);
-//           task_Y[15-repeat_count]=task_Y[15-repeat_count]^1;
-//          end
-//       else  
-//          begin
-//           task_counter(task_count,repeat_count);
-//           task_Y[7-repeat_count]=task_Y[7-repeat_count]^1;
-//          end
-//     end 
-// endtask
+task automatic my_task_model3;//前面四个灯为7~4 后面四个灯为3~0
+    inout  task_count;
+    inout [7:0] task_Y;//默认输入�?11110000
+    input [3:0] repeat_count;//默认输入�?0
+    input [31:0] Max_repeat;
+    inout   out_state;
+    input  in_state; 
+
+    begin
+        case(repeat_count)
+        8'd0,8'd1,8'd2,8'd3,8'd4,8'd5,8'd6,8'd7:
+          begin
+            task_Y[15-repeat_count]=task_Y[15-repeat_count]^1;
+            task_counter(task_count,repeat_count,Max_repeat);
+          end
+        8'd8,8'd9,8'd10,8'd11,8'd12,8'd13,8'd14:
+          begin
+             task_Y[7-repeat_count]=task_Y[7-repeat_count]^1;
+            task_counter(task_count,repeat_count,Max_repeat);
+          end
+        8'd15:
+          begin
+              task_counter(task_count,repeat_count,Max_repeat);
+              task_Y=8'h00;
+              out_state=in_state;
+          end
+        default :
+            begin
+              out_state=in_state;
+              repeat_count=0;
+            end
+        endcase
+    end
+endtask
 
 // task my_task_model4;//流水�?
 //     inout  task_count;

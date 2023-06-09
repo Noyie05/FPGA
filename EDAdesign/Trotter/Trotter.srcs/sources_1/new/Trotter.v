@@ -42,6 +42,8 @@ module Trotter(
     parameter Idle =8'b0,
               Special=8'b11110000;
 
+    parameter Count_time=32'd1000;
+
 
     always @(posedge sys_clk or negedge rst_n) 
             if(!rst_n)
@@ -59,44 +61,43 @@ module Trotter(
                     begin
                         if(repeat_2==1)
                          begin
-                            task_counter(count,repeat_2,1000);  
-                            my_task_model1(count,Y,repeat_7,1000,sel,model_2);
+                            task_counter(count,repeat_2,Count_time);  
+                            my_task_model1(count,Y,repeat_7,Count_time,sel,model_2);
                          end
                         else
                          begin
-                            task_counter(count,repeat_2,1000);
-                            my_task_model1(count,Y,repeat_7,1000,sel,model_1);
+                            my_task_model1(count,Y,repeat_7,Count_time,sel,model_1);
+                           task_counter(count,repeat_2,Count_time);
                          end
                     end
                  model_2:
                     begin
                         if(repeat_2==1)
                          begin
-                            task_counter(count,repeat_2,1000);
-                            my_task_model2(count,Y,repeat_7,1000,sel,model_3);
+                            task_counter(count,repeat_2,Count_time);
+                            my_task_model2(count,Y,repeat_7,Count_time,sel,model_3);
+                           //  sel<=model_3;
                             repeat_2<=0;
-                            Y<=~Special;
                          end
                         else
                          begin
-                            task_counter(count,repeat_2,1000);
-                            my_task_model2(count,Y,repeat_7,1000,sel,model_2);
+                            task_counter(count,repeat_2,Count_time);
+                            my_task_model2(count,Y,repeat_7,Count_time,sel,model_2);
                          end
                     end
                //   model_3:
                //      begin
                //          if(repeat_2==1)
                //           begin
-               //              Y<=Special;
-               //              task_counter(count,repeat_2);
-               //              my_task_model3(count,Y,repeat_7); 
+               //              Y<=~Special;
+               //              task_counter(count,repeat_2,Count_time);
+               //              my_task_model2(count,Y,repeat_7,Count_time,sel,model_4);
                //              repeat_2<=0;   
-               //              sel<=model_4;
                //           end
                //          else
                //           begin
-               //              task_counter(count,repeat_2);
-               //              my_task_model3(count,Y,repeat_7);
+               //              task_counter(count,repeat_2,Count_time);
+               //              my_task_model2(count,Y,repeat_7,Count_time,sel,model_2);
                //           end
                //      end
                //   model_4:
