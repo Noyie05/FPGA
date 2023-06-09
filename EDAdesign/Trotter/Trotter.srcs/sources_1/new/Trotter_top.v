@@ -27,7 +27,7 @@ module Trotter_top(
     reg sys_clk;
     reg rst_n;
     reg [1:0] sys_sel;
-
+    reg [4:0] i;
     wire [7:0] Y_out;
 
     
@@ -55,47 +55,48 @@ module Trotter_top(
     
     
 task automatic task_counter;
-    input  task_count;
-    inout  task_rep;
+    input  [31:0] task_count;
+    inout  [31:0] task_rep;
     input  [31:0] max_repeat;
      begin
             if(task_count >= max_repeat)                //规定上限count
                 begin
-                  task_rep = (task_rep+1'b1);
+                  task_rep = (task_rep+1);
                 end
             else
                 begin
-                 task_count = (task_count + 32'd1);
-                 task_rep = task_rep;
-                 task_counter(task_count,task_rep,1); //上限为1
+                    task_count = (task_count + 32'd1);
+                    task_rep = task_rep;
+                    task_counter(task_count,task_rep,1); //上限为1
                  end
      end
 endtask
 
 task automatic my_task_model1;
-    input  task_count;
+    input [31:0] task_count;
     inout [8:0] task_Y;
-    inout [4:0] repeat_count;
+    inout [3:0] repeat_count;
     input [31:0] Max_repeat;
     
     begin
-        if(repeat_count==15)
-            begin
-                task_Y[0]=task_Y[0]^1;   
-
-            end
-        else if(repeat_count>=8) //当repeat_count==8�? task_Y=8’b00000000
-            begin
-                task_Y[16-repeat_count]=task_Y[16-repeat_count]^1;
-                task_counter(task_count,repeat_count,Max_repeat);
-            end
-        else
-            begin
-                task_Y[8-repeat_count]=task_Y[8-repeat_count]^1;
-                task_counter(task_count,repeat_count,Max_repeat);
-            end
-        my_task_model1(task_count,task_Y,repeat_count,1);
-    end 
+        if(repeat_count>=8) 
+        begin
+            for ( i=0;i>7 ;i=(i+1) ) 
+                begin
+                    // task_counter(task_count,repeat_count,Max_repeat);
+                    task_Y[16-repeat_count]=task_Y[16-repeat_count]^1;
+                end    
+        end
+        else 
+            if (repeat_count>=0) 
+              begin
+                for ( i=0;i>7 ;i=(i+1) ) 
+                  begin
+                        // task_counter(task_count,repeat_count,Max_repeat);
+                        task_Y[8-repeat_count]=task_Y[8-repeat_count]^1;
+                  end 
+              end
+    end
 endtask
 
 // task my_task_model2;//前面四个灯为7~4 后面四个灯为3~0
