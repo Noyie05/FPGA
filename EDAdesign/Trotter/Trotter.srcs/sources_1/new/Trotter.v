@@ -60,31 +60,29 @@ module Trotter(
                         if(repeat_2==1)
                          begin
                             task_counter(count,repeat_2,1000);  
-                            my_task_model1(count,Y,repeat_7,100,sel,2'b01);
-                            repeat_2<=0;
+                            my_task_model1(count,Y,repeat_7,1000,sel,model_2);
                          end
                         else
                          begin
                             task_counter(count,repeat_2,1000);
-                            my_task_model1(count,Y,repeat_7,100,sel,2'b00);
+                            my_task_model1(count,Y,repeat_7,1000,sel,model_1);
                          end
                     end
-               //   model_2:
-               //      begin
-               //          if(repeat_2==1)
-               //           begin
-               //              task_counter(count,repeat_2);    
-               //              my_task_model2(count,Y,repeat_7);
-               //              repeat_2<=0;
-               //              sel<=model_3;
-               //              Y<=Special;
-               //           end
-               //          else
-               //           begin
-               //              task_counter(count,repeat_2);
-               //              my_task_model2(count,Y,repeat_7);
-               //           end
-               //      end
+                 model_2:
+                    begin
+                        if(repeat_2==1)
+                         begin
+                            task_counter(count,repeat_2,1000);
+                            my_task_model2(count,Y,repeat_7,1000,sel,model_3);
+                            repeat_2<=0;
+                            Y<=~Special;
+                         end
+                        else
+                         begin
+                            task_counter(count,repeat_2,1000);
+                            my_task_model2(count,Y,repeat_7,1000,sel,model_2);
+                         end
+                    end
                //   model_3:
                //      begin
                //          if(repeat_2==1)
