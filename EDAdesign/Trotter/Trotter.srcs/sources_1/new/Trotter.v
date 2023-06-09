@@ -42,7 +42,7 @@ module Trotter(
     parameter Idle =8'b0,
               Special=8'b11110000;
 
-    parameter Count_time=32'd1000;
+    parameter Count_time=32'd100000;
 
 
     always @(posedge sys_clk or negedge rst_n) 
@@ -61,12 +61,11 @@ module Trotter(
                     begin
                         if(repeat_2==1)
                          begin
-                            task_counter(count,repeat_2,Count_time);  
-                            my_task_model1(count,Y,repeat_7,Count_time,sel,model_2);
+                            my_task_model1(count,Y,repeat_7,Count_time,repeat_2,sel,model_2);
                          end
                         else
                          begin
-                            my_task_model1(count,Y,repeat_7,Count_time,sel,model_1);
+                           my_task_model1(count,Y,repeat_7,Count_time,repeat_2,sel,model_1);
                            task_counter(count,repeat_2,Count_time);
                          end
                     end
