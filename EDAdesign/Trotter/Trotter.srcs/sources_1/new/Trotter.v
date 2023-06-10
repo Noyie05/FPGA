@@ -30,19 +30,23 @@ module Trotter(
     reg [7:0] repeat_7;
     reg [31:0] count;
     reg [7:0] Y;
-    reg[1:0] sel;
+    reg[2:0] sel;
     reg [31:0]i;
     
     parameter 
               model_1=2'b00,
               model_2=2'b01,
               model_3=2'b10,
-              model_4=2'b11;
+              model_4=2'b11,
+              model_temp1=3'b100,
+              model_temp2=3'b101,
+              model_temp3=3'b110,
+              model_temp4=3'b111;
               
     parameter Idle =8'b0,
               Special=8'b11110000;
 
-    parameter Count_time=32'd100000;
+    parameter Count_time=32'd10000000;
 
 
     always @(posedge sys_clk or negedge rst_n) 
@@ -59,29 +63,29 @@ module Trotter(
              case(sel)
                  model_1:
                     begin
-                        if(repeat_2==1)
-                         begin
-                            my_task_model1(count,Y,repeat_7,Count_time,repeat_2,sel,model_2);
-                         end
-                        else
-                         begin
-                           my_task_model1(count,Y,repeat_7,Count_time,repeat_2,sel,model_1);
-                           task_counter(count,repeat_2,Count_time);
-                         end
+                        // if(repeat_2)
+                        //  begin
+                        //     my_task_model1(count,Y,repeat_7,Count_time,repeat_2,sel,model_2);
+                        //  end
+                        // else
+                        //  begin
+                           my_task_model1(count,Y,repeat_7,Count_time,repeat_2,sel,model_temp1);
+                           my_task_model1(count,Y,repeat_7,Count_time,repeat_2,sel,model_2);
+                        //  end
                     end
                  model_2:
                     begin
                         if(repeat_2==1)
                          begin
-                            task_counter(count,repeat_2,Count_time);
                             my_task_model2(count,Y,repeat_7,Count_time,sel,model_3);
+                            task_counter(count,repeat_2,Count_time);
                            //  sel<=model_3;
                             repeat_2<=0;
                          end
                         else
                          begin
+                            my_task_model2(count,Y,repeat_7,Count_time,sel,model_temp2);
                             task_counter(count,repeat_2,Count_time);
-                            my_task_model2(count,Y,repeat_7,Count_time,sel,model_2);
                          end
                     end
                //   model_3:
@@ -114,6 +118,10 @@ module Trotter(
 
                //           end
                //      end
+                     model_temp1:sel<=model_1;
+                     model_temp2:sel<=model_2;
+                     model_temp3:sel<=model_3;
+                     model_temp4:sel<=model_4;
                   default :sel<=model_1;
              endcase
 
