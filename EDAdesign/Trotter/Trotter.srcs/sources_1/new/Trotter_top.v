@@ -57,7 +57,7 @@ task automatic task_counter;
     inout  [31:0] task_rep;
     input  [31:0] max_repeat;
       begin
-      #max_repeat task_rep=(task_rep+1);
+         #max_repeat task_rep=(task_rep+1);
               // if(task_count >= max_repeat)                //规定上限count
               //     begin
               //       task_rep = (task_rep+1);
@@ -74,7 +74,7 @@ task automatic my_task_model1;
     input [31:0] task_count;
     inout [8:0] task_Y;
     inout [31:0]repeat_count;
-    inout repeat_2;
+    // inout repeat_2;
     input [31:0] Max_repeat;
     inout  [2:0]out_state;
     input  [2:0]in_state; 
@@ -97,7 +97,7 @@ task automatic my_task_model1;
               task_counter(task_count,repeat_count,Max_repeat);
               task_Y=8'h00;
               out_state=in_state;
-              task_counter(task_count,repeat_2,Max_repeat);
+              // task_counter(task_count,repeat_2,Max_repeat);
           end
         default :
             begin
