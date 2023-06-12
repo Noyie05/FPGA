@@ -101,7 +101,6 @@ module Trotter(
                                  my_task_model2(count,Y,repeat_7,repeat_2,Count_time,sel,model_3);
                                  // task_counter(count,repeat_2,Count_time);
                                  repeat_2<=0;
-                                 Y<=~Special;
                              end
                         endcase
                         // if(repeat_2==1)
@@ -143,6 +142,7 @@ module Trotter(
                                  // task_counter(count,repeat_2,Count_time);
                                  repeat_2<=0;
                              end
+                        endcase
                     end
                //   model_4:
                //      begin

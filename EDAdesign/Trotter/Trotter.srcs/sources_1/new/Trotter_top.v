@@ -113,11 +113,11 @@ endtask
 task automatic my_task_model2;//前面四个灯为7~4 后面四个灯为3~0
      input [31:0] task_count;
     inout [8:0] task_Y;
-    inout [7:0]repeat_count;
+    inout [31:0]repeat_count;
     inout repeat_2;
     input [31:0] Max_repeat;
-    inout   [2:0]out_state;
-    input  [2:0]in_state; 
+    inout [2:0]out_state;
+    input [2:0] in_state; 
     
     begin
       case(repeat_count)
@@ -136,10 +136,9 @@ task automatic my_task_model2;//前面四个灯为7~4 后面四个灯为3~0
         8'd7:
           begin
               task_counter(task_count,repeat_count,Max_repeat);
+              task_Y=8'h00;
               task_Y[3]=task_Y[3];
               task_Y[4]=task_Y[4];
-              task_Y=8'h00;
-              out_state=in_state;
           end
         default:
           begin
