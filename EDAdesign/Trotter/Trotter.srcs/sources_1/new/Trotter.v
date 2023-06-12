@@ -63,15 +63,15 @@ module Trotter(
              case(sel)
                  model_1:
                     begin
-                        // if(repeat_2)
-                        //  begin
-                        //     my_task_model1(count,Y,repeat_7,Count_time,repeat_2,sel,model_2);
-                        //  end
-                        // else
-                        //  begin
+                        if(repeat_2)
+                         begin
+                            my_task_model1(count,Y,repeat_7,Count_time,repeat_2,sel,model_2);
+                         end
+                        else
+                         begin
                            my_task_model1(count,Y,repeat_7,Count_time,repeat_2,sel,model_temp1);
-                           my_task_model1(count,Y,repeat_7,Count_time,repeat_2,sel,model_2);
-                        //  end
+                           // my_task_model1(count,Y,repeat_7,Count_time,repeat_2,sel,model_2);
+                         end
                     end
                  model_2:
                     begin
