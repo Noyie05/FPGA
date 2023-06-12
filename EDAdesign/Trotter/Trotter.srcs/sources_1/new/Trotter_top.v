@@ -64,7 +64,7 @@ task automatic task_counter;
             else
                 begin
                      task_count = (task_count + 32'd1);
-                    task_counter(task_count,task_rep,10); //上限为1
+                     task_counter(task_count,task_rep,100); //上限为1
                  end
      end
 endtask
