@@ -57,6 +57,20 @@ task automatic task_counter;
     inout  [31:0] task_rep;
     input  [31:0] max_repeat;
       begin
+      // case (task_count)
+      //   0:
+      //    begin
+      //     task_count=(task_count+1);
+      //    end
+      //   max_repeat: 
+      //    begin
+      //     task_rep=(task_rep+1);
+      //    end
+      //   default:
+      //    begin
+      //     task_count=(task_count+1);  
+      //    end
+      // endcase
          #max_repeat task_rep=(task_rep+1);
               // if(task_count >= max_repeat)                //规定上限count
               //     begin
@@ -145,6 +159,7 @@ task automatic my_task_model2;//前面四个灯为7~4 后面四个灯为3~0
 
               out_state=in_state;
               @(posedge sys_clk);
+              // task_Y=8'h0F;
               repeat_2=~repeat_2;
               repeat_count=0;
           end
@@ -154,6 +169,7 @@ endtask
 
 task automatic my_task_model3;//前面四个灯为7~4 后面四个灯为3~0
     inout [31:0]task_count;
+    input [8:0] InPut_Y;
     inout [8:0] task_Y;//默认输入�??11110000
     inout [31:0] repeat_count;//默认输入�??0
     inout repeat_2;
@@ -167,7 +183,7 @@ task automatic my_task_model3;//前面四个灯为7~4 后面四个灯为3~0
           begin
               task_counter(task_count,repeat_count,Max_repeat);
               repeat_count=repeat_count-1;
-              task_Y=8'h0F;
+              task_Y=InPut_Y;
               task_Y[7]=~task_Y[7];
               task_counter(task_count,repeat_count,Max_repeat);
           end
@@ -214,17 +230,17 @@ task  automatic my_task_model4;//流水�??
               task_counter(task_count,repeat_count,Max_repeat);
               repeat_count=repeat_count-1;
               task_Y=8'h00;
-              task_Y[7]=~task_Y[7];
+              task_Y[0]=task_Y[0]^1;
               task_counter(task_count,repeat_count,Max_repeat);
           end
         8'd1,8'd2,8'd3,8'd4,8'd5,8'd6,8'd7:
           begin
-            task_Y[7-repeat_count]=task_Y[7-repeat_count]^1;
+            task_Y[repeat_count]=task_Y[repeat_count]^1;
             task_counter(task_count,repeat_count,Max_repeat);
           end
         8'd8,8'd9,8'd10,8'd11,8'd12,8'd13,8'd14:
           begin
-             task_Y[15-repeat_count]=task_Y[15-repeat_count]^1;
+             task_Y[repeat_count-8]=task_Y[repeat_count-8]^1;
             task_counter(task_count,repeat_count,Max_repeat);
           end
         8'd15:
@@ -234,9 +250,12 @@ task  automatic my_task_model4;//流水�??
           end
         default :
           begin
+              task_counter(task_count,repeat_count,Max_repeat);
               out_state=in_state;
               @(posedge sys_clk);
               repeat_2=~repeat_2;
+              task_counter(task_count,repeat_count,Max_repeat);
+
               repeat_count=0;
             end
         endcase

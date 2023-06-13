@@ -63,27 +63,14 @@ module Trotter(
              case(sel)
                  model_1:
                     begin
-                        // if(repeat_2==1)
-                        //  begin
-                        //     my_task_model1(count,Y,repeat_7,repeat_2,Count_time,sel,model_2);
-                        //     task_counter(count,repeat_2,Count_time);
-                        //  end
-                        // else
-                        //  begin
-                        //    my_task_model1(count,Y,repeat_7,repeat_2,Count_time,sel,model_temp1);
-                        //    // repeat_2<=repeat_2+1;
-                        //    // my_task_model1(count,Y,repeat_7,Count_time,repeat_2,sel,model_2);
-                        //  end
                         case(repeat_2)
                            0:
                              begin
                                  my_task_model1(count,Y,repeat_7,repeat_2,Count_time,sel,model_temp1);
-                                 // task_counter(count,repeat_2,Count_time);
                              end
                            1:    
                              begin
                                  my_task_model1(count,Y,repeat_7,repeat_2,Count_time,sel,model_2);
-                                 // task_counter(count,repeat_2,Count_time);
                                  repeat_2<=0;
                              end
                         endcase
@@ -94,53 +81,25 @@ module Trotter(
                            0:
                              begin
                                  my_task_model2(count,Y,repeat_7,repeat_2,Count_time,sel,model_temp2);
-                                 // task_counter(count,repeat_2,Count_time);
                              end
                            1:    
                              begin
                                  my_task_model2(count,Y,repeat_7,repeat_2,Count_time,sel,model_3);
-                                 // task_counter(count,repeat_2,Count_time);
                                  repeat_2<=0;
-                                //  Y<=~Special;
                              end
                         endcase
-                        // if(repeat_2==1)
-                        //  begin
-                        //     my_task_model2(count,Y,repeat_7,Count_time,sel,model_3);
-                        //     task_counter(count,repeat_2,Count_time);
-                        //    //  sel<=model_3;
-                        //    //  repeat_2<=0;
-                        //  end
-                        // else
-                        //  begin
-                        //     my_task_model2(count,Y,repeat_7,Count_time,sel,model_temp2);
-                        //     task_counter(count,repeat_2,Count_time);
-                        //  end
+
                     end
                  model_3:
                     begin
-                        // if(repeat_2==1)
-                        //  begin
-                        //     Y<=~Special;
-                        //     task_counter(count,repeat_2,Count_time);
-                        //     my_task_model2(count,Y,repeat_7,Count_time,sel,model_4);
-                        //     repeat_2<=0;   
-                        //  end
-                        // else
-                        //  begin
-                        //     task_counter(count,repeat_2,Count_time);
-                        //     my_task_model2(count,Y,repeat_7,Count_time,sel,model_2);
-                        //  end
                         case(repeat_2)
                            0:
                              begin
-                                 my_task_model3(count,Y,repeat_7,repeat_2,Count_time,sel,model_temp3);
-                                 // task_counter(count,repeat_2,Count_time);
+                                 my_task_model3(count,~Special,Y,repeat_7,repeat_2,Count_time,sel,model_temp3);
                              end
                            1:    
                              begin
-                                 my_task_model3(count,Y,repeat_7,repeat_2,Count_time,sel,model_4);
-                                 // task_counter(count,repeat_2,Count_time);
+                                 my_task_model3(count,~Special,Y,repeat_7,repeat_2,Count_time,sel,model_4);
                                  repeat_2<=0;
                              end
                         endcase
@@ -150,28 +109,15 @@ module Trotter(
                         case(repeat_2)
                            0:
                              begin
-                                 my_task_model3(count,Y,repeat_7,repeat_2,Count_time,sel,model_temp4);
-                                 // task_counter(count,repeat_2,Count_time);
+                                 my_task_model4(count,Y,repeat_7,repeat_2,Count_time,sel,model_temp4);
                              end
                            1:    
                              begin
-                                 my_task_model3(count,Y,repeat_7,repeat_2,Count_time,sel,model_1);
-                                 // task_counter(count,repeat_2,Count_time);
+                                 my_task_model4(count,Y,repeat_7,repeat_2,Count_time,sel,model_1);
                                  repeat_2<=0;
                              end
                         endcase
-                        // if(repeat_2==1)
-                        //  begin
-                        //     task_counter(count,repeat_2);    
-                        //     my_task_model4(count,Y,repeat_7);
-                        //     sel<=model_1;
-                        //  end
-                        // else
-                        //  begin
-                        //     task_counter(count,repeat_2);
-                        //     my_task_model3(count,Y,repeat_7);
 
-                        //  end
                     end
                      model_temp1:sel<=model_1;
                      model_temp2:sel<=model_2;
