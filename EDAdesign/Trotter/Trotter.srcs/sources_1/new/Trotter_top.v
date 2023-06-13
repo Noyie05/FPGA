@@ -65,7 +65,7 @@ task automatic task_counter;
               // else
               //     begin
               //         task_count = (task_count + 32'd1);
-              //         task_counter(task_count,task_rep,100); //上限为1
+              //         task_counter(task_count,task_rep,100); //上限�?1
               //     end
       end
 endtask
@@ -96,7 +96,7 @@ task automatic my_task_model1;
           begin
               task_counter(task_count,repeat_count,Max_repeat);
               task_Y=8'h00;
-              out_state=in_state;
+              // out_state=in_state;
               // task_counter(task_count,repeat_2,Max_repeat);
           end
         default :
@@ -135,13 +135,14 @@ task automatic my_task_model2;//前面四个灯为7~4 后面四个灯为3~0
           end
         8'd7:
           begin
-              task_counter(task_count,repeat_count,Max_repeat);
+              task_counter(task_count,repeat_count,2*Max_repeat);
               task_Y=8'h00;
               task_Y[3]=task_Y[3];
               task_Y[4]=task_Y[4];
           end
         default:
           begin
+
               out_state=in_state;
               @(posedge sys_clk);
               repeat_2=~repeat_2;
@@ -152,31 +153,84 @@ task automatic my_task_model2;//前面四个灯为7~4 后面四个灯为3~0
 endtask
 
 task automatic my_task_model3;//前面四个灯为7~4 后面四个灯为3~0
-    inout  task_count;
-    inout [7:0] task_Y;//默认输入�?11110000
-    inout [3:0] repeat_count;//默认输入�?0
+    inout [31:0]task_count;
+    inout [8:0] task_Y;//默认输入�??11110000
+    inout [31:0] repeat_count;//默认输入�??0
     inout repeat_2;
     input [31:0] Max_repeat;
-    inout   out_state;
-    input  in_state; 
+    inout   [2:0]out_state;
+    input  [2:0]in_state; 
 
     begin
         case(repeat_count)
-        8'd0,8'd1,8'd2,8'd3,8'd4,8'd5,8'd6,8'd7:
+        8'd0:
           begin
-            task_Y[15-repeat_count]=task_Y[15-repeat_count]^1;
+              task_counter(task_count,repeat_count,Max_repeat);
+              repeat_count=repeat_count-1;
+              task_Y=8'h0F;
+              task_Y[7]=~task_Y[7];
+              task_counter(task_count,repeat_count,Max_repeat);
+          end
+        8'd1,8'd2,8'd3,8'd4,8'd5,8'd6,8'd7:
+          begin
+            task_Y[7-repeat_count]=~task_Y[7-repeat_count];
             task_counter(task_count,repeat_count,Max_repeat);
           end
         8'd8,8'd9,8'd10,8'd11,8'd12,8'd13,8'd14:
           begin
-             task_Y[7-repeat_count]=task_Y[7-repeat_count]^1;
+             task_Y[15-repeat_count]=~task_Y[15-repeat_count];
             task_counter(task_count,repeat_count,Max_repeat);
           end
         8'd15:
           begin
               task_counter(task_count,repeat_count,Max_repeat);
-              task_Y=8'h00;
+              task_Y=0;
+          end
+        default :
+          begin
+              task_Y=0;
               out_state=in_state;
+              @(posedge sys_clk);
+              repeat_2=~repeat_2;
+              repeat_count=0;
+            end
+        endcase
+    end
+endtask
+
+task  automatic my_task_model4;//流水�??
+    inout [31:0]task_count;
+    inout [8:0] task_Y;//默认输入�??11111111
+    inout [31:0] repeat_count;//默认输入�??0
+    inout repeat_2;
+    input [31:0] Max_repeat;
+    inout   [2:0]out_state;
+    input  [2:0]in_state; 
+    
+    begin
+        case(repeat_count)
+          8'd0:
+          begin
+              task_counter(task_count,repeat_count,Max_repeat);
+              repeat_count=repeat_count-1;
+              task_Y=8'h00;
+              task_Y[7]=~task_Y[7];
+              task_counter(task_count,repeat_count,Max_repeat);
+          end
+        8'd1,8'd2,8'd3,8'd4,8'd5,8'd6,8'd7:
+          begin
+            task_Y[7-repeat_count]=task_Y[7-repeat_count]^1;
+            task_counter(task_count,repeat_count,Max_repeat);
+          end
+        8'd8,8'd9,8'd10,8'd11,8'd12,8'd13,8'd14:
+          begin
+             task_Y[15-repeat_count]=task_Y[15-repeat_count]^1;
+            task_counter(task_count,repeat_count,Max_repeat);
+          end
+        8'd15:
+          begin
+              task_counter(task_count,repeat_count,Max_repeat);
+              task_Y=0;
           end
         default :
           begin
@@ -188,12 +242,6 @@ task automatic my_task_model3;//前面四个灯为7~4 后面四个灯为3~0
         endcase
     end
 endtask
-
-// task my_task_model4;//流水�?
-//     inout  task_count;
-//     inout [7:0] task_Y;//默认输入�?11111111
-//     input [3:0] repeat_count;//默认输入�?0
-    
 //     begin
 //       task_Y=Idle;
 //       if(repeat_count==15) 
