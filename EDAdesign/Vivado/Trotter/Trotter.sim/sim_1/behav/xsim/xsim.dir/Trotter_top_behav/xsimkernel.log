@@ -2,3 +2,6 @@ Running: xsim.dir/Trotter_top_behav/xsimk.exe -simmode gui -wdb Trotter_top_beha
 Design successfully loaded
 Design Loading Memory Usage: 6476 KB (Peak: 6476 KB)
 Design Loading CPU Usage: 46 ms
+Simulation completed
+Simulation Memory Usage: 10984 KB (Peak: 10984 KB)
+Simulation CPU Usage: 93 ms
