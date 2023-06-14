@@ -1,0 +1,7 @@
+Running: xsim.dir/horse_lights_tb_behav/xsimk.exe -simmode gui -wdb horse_lights_tb_behav.wdb -simrunnum 0 -socket 6553
+Design successfully loaded
+Design Loading Memory Usage: 6424 KB (Peak: 6424 KB)
+Design Loading CPU Usage: 15 ms
+Simulation completed
+Simulation Memory Usage: 7072 KB (Peak: 7072 KB)
+Simulation CPU Usage: 15 ms

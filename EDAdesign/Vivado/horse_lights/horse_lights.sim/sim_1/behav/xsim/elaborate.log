@@ -1,0 +1,8 @@
+Vivado Simulator 2019.2
+Copyright 1986-1999, 2001-2019 Xilinx, Inc. All Rights Reserved.
+Running: D:/Software/Vivado/Vivado/2019.2/bin/unwrapped/win64.o/xelab.exe -wto 96cb5cb8890b426ca7b413af3a8d381a --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot horse_lights_tb_behav xil_defaultlib.horse_lights_tb xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+ERROR: [VRFC 10-3180] cannot find port 'rst' on this module [D:/Project/FPGA/FPGA/EDAdesign/QuartusII/Test/horse_lights_tb.v:13]
+ERROR: [XSIM 43-3322] Static elaboration of top level Verilog design unit(s) in library work failed.

@@ -1,0 +1,25 @@
+|horse_lights
+S[0] => Equal0.IN1
+S[0] => Equal1.IN0
+S[0] => Equal2.IN1
+S[1] => Equal0.IN0
+S[1] => Equal1.IN1
+S[1] => Equal2.IN0
+clk => Y[0]~reg0.CLK
+clk => Y[1]~reg0.CLK
+clk => Y[2]~reg0.CLK
+clk => Y[3]~reg0.CLK
+clk => Y[4]~reg0.CLK
+clk => Y[5]~reg0.CLK
+clk => Y[6]~reg0.CLK
+clk => Y[7]~reg0.CLK
+Y[0] << Y[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Y[1] << Y[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Y[2] << Y[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Y[3] << Y[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Y[4] << Y[4]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Y[5] << Y[5]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Y[6] << Y[6]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Y[7] << Y[7]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
