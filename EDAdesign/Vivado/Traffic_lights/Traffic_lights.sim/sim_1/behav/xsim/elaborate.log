@@ -1,0 +1,15 @@
+Vivado Simulator 2019.2
+Copyright 1986-1999, 2001-2019 Xilinx, Inc. All Rights Reserved.
+Running: D:/Software/Vivado/Vivado/2019.2/bin/unwrapped/win64.o/xelab.exe -wto b05205ef5765422a8861796300214d70 --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot Traffic_lights_top_behav xil_defaultlib.Traffic_lights_top xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+Completed static elaboration
+Starting simulation data flow analysis
+WARNING: [XSIM 43-4100] "D:/Project/FPGA/FPGA/EDAdesign/Vivado/Traffic_lights/Traffic_lights.sim/sim_1/behav/xsim/glbl.v" Line 6. Module glbl has a timescale but at least one module in design doesn't have timescale.
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.Traffic_lights
+Compiling module xil_defaultlib.Traffic_lights_top
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot Traffic_lights_top_behav
