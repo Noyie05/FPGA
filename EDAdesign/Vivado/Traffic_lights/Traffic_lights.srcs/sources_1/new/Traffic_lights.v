@@ -23,6 +23,7 @@ module Traffic_lights (
     reg  [2:0]  states;
     reg  [31:0] light_Counts;
     reg  [7:0]  light_exist;
+    reg  count_rst;
 
     parameter        red=3'b001,
                   yellow=3'b010,
@@ -41,6 +42,7 @@ module Traffic_lights (
             states<=light_states;
             light_Counts<=0;
             light_exist<=0;
+            count_rst<=0;
             North_Lights<=0;
             South_Lights<=0;
             East_Lights<=0;
@@ -50,10 +52,11 @@ module Traffic_lights (
         case (states)
             model1:
                     begin
-                      if(light_exist==30) 
+                      if(light_exist==29) 
                       begin
                          states<=model2;
                          light_exist<=0;
+                         count_rst<=1;
                       end
                       else 
                        begin
@@ -65,10 +68,11 @@ module Traffic_lights (
                     end
             model2:
                     begin
-                      if(light_exist==30) 
+                      if(light_exist==2) 
                       begin
-                         states<=model4;
+                         states<=model3;
                          light_exist<=0;
+                         count_rst<=1;
                       end
                       else 
                        begin
@@ -82,8 +86,9 @@ module Traffic_lights (
                     begin
                       if(light_exist==30) 
                       begin
-                         states<=model3;
+                         states<=model4;
                          light_exist<=0;
+                         count_rst<=1;
                       end
                       else 
                        begin
@@ -99,6 +104,7 @@ module Traffic_lights (
                       begin
                          states<=model1;
                          light_exist<=0;
+                         count_rst<=1;
                       end
                       else 
                        begin
@@ -113,19 +119,28 @@ module Traffic_lights (
      end
     
     
-    always @(*) 
-    if(sys_rst) 
+    always @(posedge sys_clk or negedge sys_rst) 
     begin
-        if(light_Counts>=32'd100) 
-          begin
-                light_exist<=(light_exist+1);
-                light_Counts<=0;
-          end
-        else 
-        begin
-                light_exist<=light_exist;
-                light_Counts<=(light_Counts+1);
-        end
+      if(sys_rst) 
+         if (!count_rst) 
+            begin
+               if(light_Counts>=32'd366) 
+                  begin
+                  light_exist<=(light_exist+1);
+                  light_Counts<=0;
+                  end
+               else 
+                  begin
+                  light_exist<=light_exist;
+                  light_Counts<=(light_Counts+1);
+                  end
+            end
+         else
+            begin
+               light_exist<=0;
+               count_rst<=0;
+            end
+            
     end
 
 endmodule //Traffic_lights

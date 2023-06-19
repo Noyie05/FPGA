@@ -1,3 +1,4 @@
+`timescale 10ms / 10ms
 module Traffic_lights_top();
     reg sys_rst;
     reg sys_clk;
