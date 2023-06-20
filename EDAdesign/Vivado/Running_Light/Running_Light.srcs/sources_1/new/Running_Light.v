@@ -1,5 +1,4 @@
-/*
-课程设计一：基于Verilog的跑马灯设计
+/*课程设计一：基于Verilog的跑马灯设计
 设计一个能够有多种工作模式控制的8个灯亮灭的电路。 
 
 工作模式1：按照从左到右的方向，依次点亮每一盏灯，然后依次熄灭每一盏灯； 
@@ -16,24 +15,29 @@
 
 */
 module Running_Light (
-    input  wire [1:0]S,
-    input  wire clk,
-    input  wire rst,
-    output wire Y
+    input   [1:0]S,
+    input   clk,
+    input   rst,
+    output [7:0] Y
 );
 
-    reg [1:0] sel;
+    reg [2:0] sel;
     reg [7:0] Y_out;
     reg [31:0] state_count;
     reg [7:0]  state_exist;
-    reg count_rst;
+    reg count_rst=0;
+    reg model_repeat;
+    
     parameter 
                model_1=2'b00,
                model_2=2'b01,
                model_3=2'b10,
-               model_4=2'b11;
+               model_4=2'b11,
+               model_temp1=3'b100,
+               model_temp2=3'b101,
+               model_temp3=3'b110,
+               model_temp4=3'b111;
 
-              
     parameter Idle =8'b0,
               Special=8'b11110000;
 
@@ -41,6 +45,10 @@ module Running_Light (
 
     always @(posedge clk or negedge rst) 
         begin
+        if(!rst) begin
+            
+        end
+        else 
             case (sel)
                 model_1:
                     begin
@@ -58,7 +66,12 @@ module Running_Light (
                             Y_out<=8'h00;
                             count_rst<=1;
                             state_exist<=0;
-                            sel<=model_2;
+                            if(count_rst) 
+                            begin
+                                sel<=model_temp1;
+                            end
+                            else 
+                                sel<=model_2;
                         end
                         default :state_exist<=0;
                       endcase
@@ -69,12 +82,12 @@ module Running_Light (
                         8'd0,8'd1,8'd2,8'd3:
                         begin
                             Y_out[8-state_exist]<=Y_out[8-state_exist]^1;
-                            Y_out[repeat_count]=Y_out[repeat_count]^1;
+                            Y_out[state_exist]=Y_out[state_exist]^1;
                         end
                         8'd4,8'd5,8'd6:
                         begin
-                            Y_out[11-repeat_count]<=Y_out[11-repeat_count]^1;
-                            Y_out[repeat_count-4]<=Y_out[repeat_count-4]^1;
+                            Y_out[11-state_exist]<=Y_out[11-state_exist]^1;
+                            Y_out[state_exist-4]<=Y_out[state_exist-4]^1;
                         end
                         8'd7:
                         begin
@@ -95,6 +108,7 @@ module Running_Light (
                     begin
                       
                     end
+                model_temp1:sel<=model_1;
                 default:sel<=model_1; 
             endcase
         end
