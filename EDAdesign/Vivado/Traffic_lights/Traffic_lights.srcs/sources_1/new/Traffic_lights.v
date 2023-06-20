@@ -141,6 +141,6 @@ module Traffic_lights (
                count_rst<=0;
             end
             
-    end
+     end
 
 endmodule //Traffic_lights
