@@ -1,4 +1,4 @@
-`timescale 10ns/10ns
+`timescale 10ms/10ms
 module Running_Light_top ();
     
     reg [1:0] sel;

@@ -1,0 +1,4 @@
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Project/FPGA/FPGA/EDAdesign/Vivado/Running_Light/Running_Light.srcs/sources_1/new/Running_Light.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Running_Light
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Project/FPGA/FPGA/EDAdesign/Vivado/Running_Light/Running_Light.srcs/sources_1/new/Running_Light_top.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Running_Light_top

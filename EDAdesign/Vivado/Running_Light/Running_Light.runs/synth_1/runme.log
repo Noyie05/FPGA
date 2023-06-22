@@ -1,0 +1,288 @@
+
+*** Running vivado
+    with args -log Running_Light_top.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source Running_Light_top.tcl
+
+
+****** Vivado v2019.2 (64-bit)
+  **** SW Build 2708876 on Wed Nov  6 21:40:23 MST 2019
+  **** IP Build 2700528 on Thu Nov  7 00:09:20 MST 2019
+    ** Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+
+source Running_Light_top.tcl -notrace
+Command: synth_design -top Running_Light_top -part xc7z020clg400-2
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7z020'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7z020'
+INFO: Launching helper process for spawning children vivado processes
+INFO: Helper process launched with PID 19108 
+---------------------------------------------------------------------------------
+Starting Synthesize : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 701.770 ; gain = 237.199
+---------------------------------------------------------------------------------
+INFO: [Synth 8-6157] synthesizing module 'Running_Light_top' [D:/Project/FPGA/FPGA/EDAdesign/Vivado/Running_Light/Running_Light.srcs/sources_1/new/Running_Light_top.v:2]
+WARNING: [Synth 8-85] always block has no event control specified [D:/Project/FPGA/FPGA/EDAdesign/Vivado/Running_Light/Running_Light.srcs/sources_1/new/Running_Light_top.v:17]
+INFO: [Synth 8-6157] synthesizing module 'Running_Light' [D:/Project/FPGA/FPGA/EDAdesign/Vivado/Running_Light/Running_Light.srcs/sources_1/new/Running_Light.v:17]
+	Parameter model_1 bound to: 2'b00 
+	Parameter model_2 bound to: 2'b01 
+	Parameter model_3 bound to: 2'b10 
+	Parameter model_4 bound to: 2'b11 
+	Parameter model_temp1 bound to: 3'b100 
+	Parameter model_temp2 bound to: 3'b101 
+	Parameter model_temp3 bound to: 3'b110 
+	Parameter model_temp4 bound to: 3'b111 
+	Parameter Idle bound to: 8'b00000000 
+	Parameter Special bound to: 8'b11110000 
+	Parameter Count_time bound to: 500 - type: integer 
+INFO: [Synth 8-226] default block is never used [D:/Project/FPGA/FPGA/EDAdesign/Vivado/Running_Light/Running_Light.srcs/sources_1/new/Running_Light.v:58]
+WARNING: [Synth 8-6090] variable 'Y_out' is written by both blocking and non-blocking assignments, entire logic could be removed [D:/Project/FPGA/FPGA/EDAdesign/Vivado/Running_Light/Running_Light.srcs/sources_1/new/Running_Light.v:94]
+WARNING: [Synth 8-5788] Register sel_reg in module Running_Light is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/Project/FPGA/FPGA/EDAdesign/Vivado/Running_Light/Running_Light.srcs/sources_1/new/Running_Light.v:50]
+WARNING: [Synth 8-5788] Register state_exist_reg in module Running_Light is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/Project/FPGA/FPGA/EDAdesign/Vivado/Running_Light/Running_Light.srcs/sources_1/new/Running_Light.v:207]
+WARNING: [Synth 8-5788] Register state_count_reg in module Running_Light is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/Project/FPGA/FPGA/EDAdesign/Vivado/Running_Light/Running_Light.srcs/sources_1/new/Running_Light.v:205]
+WARNING: [Synth 8-5788] Register model_repeat_reg in module Running_Light is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/Project/FPGA/FPGA/EDAdesign/Vivado/Running_Light/Running_Light.srcs/sources_1/new/Running_Light.v:218]
+WARNING: [Synth 8-5788] Register count_rst_reg in module Running_Light is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/Project/FPGA/FPGA/EDAdesign/Vivado/Running_Light/Running_Light.srcs/sources_1/new/Running_Light.v:203]
+WARNING: [Synth 8-6014] Unused sequential element state_count_reg was removed.  [D:/Project/FPGA/FPGA/EDAdesign/Vivado/Running_Light/Running_Light.srcs/sources_1/new/Running_Light.v:52]
+WARNING: [Synth 8-6014] Unused sequential element state_count_reg was removed.  [D:/Project/FPGA/FPGA/EDAdesign/Vivado/Running_Light/Running_Light.srcs/sources_1/new/Running_Light.v:205]
+INFO: [Synth 8-6155] done synthesizing module 'Running_Light' (1#1) [D:/Project/FPGA/FPGA/EDAdesign/Vivado/Running_Light/Running_Light.srcs/sources_1/new/Running_Light.v:17]
+INFO: [Synth 8-6155] done synthesizing module 'Running_Light_top' (2#1) [D:/Project/FPGA/FPGA/EDAdesign/Vivado/Running_Light/Running_Light.srcs/sources_1/new/Running_Light_top.v:2]
+---------------------------------------------------------------------------------
+Finished Synthesize : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 774.680 ; gain = 310.109
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 774.680 ; gain = 310.109
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7z020clg400-2
+---------------------------------------------------------------------------------
+INFO: [Device 21-403] Loading part xc7z020clg400-2
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 774.680 ; gain = 310.109
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 774.680 ; gain = 310.109
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+No constraint files found.
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      9 Bit       Adders := 5     
+	   2 Input      8 Bit       Adders := 1     
+	   2 Input      1 Bit       Adders := 1     
++---Registers : 
+	                8 Bit    Registers := 1     
+	                3 Bit    Registers := 1     
++---Muxes : 
+	   2 Input      8 Bit        Muxes := 17    
+	   4 Input      8 Bit        Muxes := 5     
+	   5 Input      8 Bit        Muxes := 2     
+	   8 Input      8 Bit        Muxes := 1     
+	  11 Input      8 Bit        Muxes := 1     
+	   6 Input      8 Bit        Muxes := 1     
+	   2 Input      3 Bit        Muxes := 10    
+	   5 Input      3 Bit        Muxes := 2     
+	   6 Input      3 Bit        Muxes := 1     
+	   4 Input      3 Bit        Muxes := 1     
+	   6 Input      2 Bit        Muxes := 1     
+	   5 Input      2 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 13    
+	   5 Input      1 Bit        Muxes := 4     
+	   6 Input      1 Bit        Muxes := 3     
+	   4 Input      1 Bit        Muxes := 2     
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Hierarchical Component Statistics 
+---------------------------------------------------------------------------------
+Hierarchical RTL Component report 
+Module Running_Light 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      9 Bit       Adders := 5     
+	   2 Input      8 Bit       Adders := 1     
+	   2 Input      1 Bit       Adders := 1     
++---Registers : 
+	                8 Bit    Registers := 1     
+	                3 Bit    Registers := 1     
++---Muxes : 
+	   2 Input      8 Bit        Muxes := 17    
+	   4 Input      8 Bit        Muxes := 5     
+	   5 Input      8 Bit        Muxes := 2     
+	   8 Input      8 Bit        Muxes := 1     
+	  11 Input      8 Bit        Muxes := 1     
+	   6 Input      8 Bit        Muxes := 1     
+	   2 Input      3 Bit        Muxes := 10    
+	   5 Input      3 Bit        Muxes := 2     
+	   6 Input      3 Bit        Muxes := 1     
+	   4 Input      3 Bit        Muxes := 1     
+	   6 Input      2 Bit        Muxes := 1     
+	   5 Input      2 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 13    
+	   5 Input      1 Bit        Muxes := 4     
+	   6 Input      1 Bit        Muxes := 3     
+	   4 Input      1 Bit        Muxes := 2     
+---------------------------------------------------------------------------------
+Finished RTL Hierarchical Component Statistics
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 220 (col length:60)
+BRAMs: 280 (col length: RAMB18 60 RAMB36 30)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+No constraint files found.
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+Warning: Parallel synthesis criteria is not met 
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:09 ; elapsed = 00:00:09 . Memory (MB): peak = 949.348 ; gain = 484.777
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+No constraint files found.
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:09 ; elapsed = 00:00:09 . Memory (MB): peak = 949.348 ; gain = 484.777
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:09 ; elapsed = 00:00:09 . Memory (MB): peak = 949.348 ; gain = 484.777
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:14 ; elapsed = 00:00:14 . Memory (MB): peak = 949.348 ; gain = 484.777
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:14 ; elapsed = 00:00:14 . Memory (MB): peak = 949.348 ; gain = 484.777
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:14 ; elapsed = 00:00:14 . Memory (MB): peak = 949.348 ; gain = 484.777
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:14 ; elapsed = 00:00:14 . Memory (MB): peak = 949.348 ; gain = 484.777
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:14 ; elapsed = 00:00:14 . Memory (MB): peak = 949.348 ; gain = 484.777
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:14 ; elapsed = 00:00:14 . Memory (MB): peak = 949.348 ; gain = 484.777
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++-+-----+------+
+| |Cell |Count |
++-+-----+------+
++-+-----+------+
+
+Report Instance Areas: 
++------+---------+-------+------+
+|      |Instance |Module |Cells |
++------+---------+-------+------+
+|1     |top      |       |     0|
++------+---------+-------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:14 ; elapsed = 00:00:14 . Memory (MB): peak = 949.348 ; gain = 484.777
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 9 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:14 ; elapsed = 00:00:14 . Memory (MB): peak = 949.348 ; gain = 484.777
+Synthesis Optimization Complete : Time (s): cpu = 00:00:14 ; elapsed = 00:00:14 . Memory (MB): peak = 949.348 ; gain = 484.777
+INFO: [Project 1-571] Translating synthesized netlist
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 949.348 ; gain = 0.000
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1061.629 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+INFO: [Common 17-83] Releasing license: Synthesis
+12 Infos, 9 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:18 ; elapsed = 00:00:20 . Memory (MB): peak = 1061.629 ; gain = 621.926
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1061.629 ; gain = 0.000
+WARNING: [Constraints 18-5210] No constraints selected for write.
+Resolution: This message can indicate that there are no constraints for the design, or it can indicate that the used_in flags are set such that the constraints are ignored. This later case is used when running synth_design to not write synthesis constraints to the resulting checkpoint. Instead, project constraints are read when the synthesized design is opened.
+INFO: [Common 17-1381] The checkpoint 'D:/Project/FPGA/FPGA/EDAdesign/Vivado/Running_Light/Running_Light.runs/synth_1/Running_Light_top.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_utilization -file Running_Light_top_utilization_synth.rpt -pb Running_Light_top_utilization_synth.pb
+INFO: [Common 17-206] Exiting Vivado at Wed Jun 21 22:57:02 2023...

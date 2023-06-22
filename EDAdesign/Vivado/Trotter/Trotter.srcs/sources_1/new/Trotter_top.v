@@ -30,7 +30,7 @@ module Trotter_top(
     wire [7:0] Y_out;
 
     
-    parameter Idle =8'b11111111,
+    parameter Idle =8'b0,
               Special=8'b11110000;
 
     always #1 sys_clk=~sys_clk;
@@ -181,16 +181,14 @@ task automatic my_task_model3;//前面四个灯为7~4 后面四个灯为3~0
         case(repeat_count)
         8'd0:
           begin
-              task_counter(task_count,repeat_count,Max_repeat);
-              repeat_count=repeat_count-1;
-              task_Y=InPut_Y;
-              task_Y[7]=~task_Y[7];
-              task_counter(task_count,repeat_count,Max_repeat);
+            task_Y=InPut_Y;
+            task_counter(task_count,repeat_count,Max_repeat);
+            task_Y[8-repeat_count]=task_Y[8-repeat_count]^1;
           end
         8'd1,8'd2,8'd3,8'd4,8'd5,8'd6,8'd7:
           begin
-            task_Y[7-repeat_count]=~task_Y[7-repeat_count];
             task_counter(task_count,repeat_count,Max_repeat);
+            task_Y[8-repeat_count]=task_Y[8-repeat_count]^1;
           end
         8'd8,8'd9,8'd10,8'd11,8'd12,8'd13,8'd14:
           begin

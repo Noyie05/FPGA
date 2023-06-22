@@ -1,0 +1,50 @@
+m255
+K4
+z2
+13
+cModel Technology
+dF:/EDA/Verilog/VerilogHDL/VerilogHDL/Chapter05/inital_app
+!s112 0.1
+!i10d 8192
+!i10e 25
+!i10f 100
+vRunning_Light
+Z0 V`JN@9S9cnhjKRR_L]QIcM3
+r1
+!s85 0
+31
+IimJVDJWhC]@W;FiXYFf`e2
+Z1 dD:/Project/FPGA/FPGA/EDAdesign/ModelSim
+w1687355410
+8D:/Project/FPGA/FPGA/EDAdesign/Vivado/Running_Light/Running_Light.srcs/sources_1/new/Running_Light.v
+FD:/Project/FPGA/FPGA/EDAdesign/Vivado/Running_Light/Running_Light.srcs/sources_1/new/Running_Light.v
+L0 17
+Z2 OL;L;10.2c;57
+Z3 o-work work -L mtiAvm -L mtiOvm -L mtiUvm -L mtiUPF
+n@running_@light
+!s100 e]b=l:`JOVid6<ORiUC<P0
+!s90 -reportprogress|300|-work|work|-vopt|D:/Project/FPGA/FPGA/EDAdesign/Vivado/Running_Light/Running_Light.srcs/sources_1/new/Running_Light.v|
+!i10b 1
+!s108 1687358498.595000
+!s107 D:/Project/FPGA/FPGA/EDAdesign/Vivado/Running_Light/Running_Light.srcs/sources_1/new/Running_Light.v|
+!i111 0
+vRunning_Light_top
+Z4 V`JN@9S9cnhjKRR_L]QIcM3
+r1
+31
+IOf6B5N6Q]Ek_Xaj9iAzS@2
+R1
+w1687355428
+8D:/Project/FPGA/FPGA/EDAdesign/Vivado/Running_Light/Running_Light.srcs/sources_1/new/Running_Light_top.v
+FD:/Project/FPGA/FPGA/EDAdesign/Vivado/Running_Light/Running_Light.srcs/sources_1/new/Running_Light_top.v
+L0 2
+R2
+R3
+n@running_@light_top
+!s85 0
+!s100 VaTzoMPF2MZdkbf1<iUEY0
+!s90 -reportprogress|300|-work|work|-vopt|D:/Project/FPGA/FPGA/EDAdesign/Vivado/Running_Light/Running_Light.srcs/sources_1/new/Running_Light_top.v|
+!s108 1687358498.541000
+!s107 D:/Project/FPGA/FPGA/EDAdesign/Vivado/Running_Light/Running_Light.srcs/sources_1/new/Running_Light_top.v|
+!i10b 1
+!i111 0

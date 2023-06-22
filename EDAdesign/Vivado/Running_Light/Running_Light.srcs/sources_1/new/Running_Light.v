@@ -25,8 +25,9 @@ module Running_Light (
     reg [7:0] Y_out;
     reg [31:0] state_count;
     reg [7:0]  state_exist;
-    reg count_rst=0;
+    reg count_rst;
     reg model_repeat;
+  
     
     parameter 
                model_1=2'b00,
@@ -41,12 +42,17 @@ module Running_Light (
     parameter Idle =8'b0,
               Special=8'b11110000;
 
-    parameter Count_time=100;
+    parameter Count_time=500;
 
     always @(posedge clk or negedge rst) 
         begin
         if(!rst) begin
-            
+            sel<=S;
+            Y_out<=Idle;
+            state_count<=0;
+            state_exist<=0;
+            count_rst<=0;
+            model_repeat<=0;
         end
         else 
             case (sel)
@@ -55,24 +61,27 @@ module Running_Light (
                       case(state_exist)
                         8'd0,8'd1,8'd2,8'd3,8'd4,8'd5,8'd6,8'd7:
                         begin
-                            Y_out[8-state_exist]<=Y_out[8-state_exist]^1;
+                            Y_out[7-state_exist]<=1;
                         end
                         8'd8,8'd9,8'd10,8'd11,8'd12,8'd13,8'd14:
                         begin
-                            Y_out[15-state_exist]<=Y_out[15-state_exist]^1;
+                            Y_out[15-state_exist]<=0;
                         end
                         8'd15:
                         begin
                             Y_out<=8'h00;
-                            count_rst<=1;
-                            state_exist<=0;
-                            if(count_rst) 
-                            begin
-                                sel<=model_temp1;
-                            end
-                            else 
-                                sel<=model_2;
                         end
+                        8'd16:
+                            begin
+                                state_exist<=0;
+                                count_rst<=1;
+                                if(!model_repeat) 
+                                    begin
+                                        sel<=model_temp1;
+                                    end
+                                    else 
+                                        sel<=model_2;
+                            end                      
                         default :state_exist<=0;
                       endcase
                     end 
@@ -81,34 +90,109 @@ module Running_Light (
                       case(state_exist)
                         8'd0,8'd1,8'd2,8'd3:
                         begin
-                            Y_out[8-state_exist]<=Y_out[8-state_exist]^1;
-                            Y_out[state_exist]=Y_out[state_exist]^1;
+                            Y_out[7-state_exist]<=1;
+                            Y_out[state_exist]=1;
                         end
                         8'd4,8'd5,8'd6:
                         begin
-                            Y_out[11-state_exist]<=Y_out[11-state_exist]^1;
-                            Y_out[state_exist-4]<=Y_out[state_exist-4]^1;
+                            Y_out[11-state_exist]<=0;
+                            Y_out[state_exist-4]<=0;
                         end
                         8'd7:
                         begin
-                            Y_out[3]=Y_out[3]^1;
-                            Y_out[4]=Y_out[4]^1;
-                            count_rst<=1;
-                            state_exist<=0;
-                            sel<=model_3;
+                                Y_out[3]=0;
+                                Y_out[4]=0;
                         end
+                        8'd8:
+                            begin
+                                count_rst<=1;
+                                state_exist<=0;
+                                if(!model_repeat) 
+                                    begin
+                                        sel<=model_temp2;
+                                    end
+                                    else 
+                                        begin
+                                            sel<=model_3;
+                                            Y_out=Special;
+                                        end
+                            end
                         default :state_exist<=0;
                       endcase
                     end
                 model_3:
                     begin
-                      
+                        case(state_exist)
+                            8'd0:
+                            begin
+                                Y_out[0]=1;
+                            end
+                            8'd1,8'd2,8'd3:
+                            begin
+                                Y_out[state_exist]<=1;
+                            end
+                            8'd4,8'd5,8'd6,8'd7:
+                            begin
+                                Y_out[state_exist]<=0;
+                            end
+                            8'd8:
+                            begin
+                                Y_out<=Special;
+                            end
+                            8'd9:
+                            begin
+                                count_rst<=1;
+                                state_exist<=0;
+                                if(!model_repeat) 
+                                    begin
+                                        sel<=model_temp3;
+                                    end
+                                    else 
+                                        begin
+                                            sel<=model_4;
+                                            Y_out<=~Idle;
+                                        end
+                            end
+                            default :state_exist<=0;
+                        endcase
                     end
                 model_4:
                     begin
-                      
+                        case(state_exist)
+                        8'd0,8'd1,8'd2,8'd3,8'd4,8'd5,8'd6,8'd7:
+                        begin
+                            Y_out[7-state_exist]=0;
+                        end
+                        8'd8,8'd9,8'd10,8'd11,8'd12,8'd13,8'd14:
+                        begin
+                            Y_out[state_exist-8]=1;
+                        end
+                        8'd15:
+                        begin
+                            count_rst<=1;
+                            state_exist<=0;
+                            if(!model_repeat) 
+                                begin
+                                    sel<=model_temp4;
+                                    Y_out<=~Idle;
+                                end
+                                else 
+                                    begin
+                                        sel<=model_1;
+                                        Y_out<=Idle;
+                                    end
+                        end
+                        default :state_exist<=0;
+                        endcase
                     end
                 model_temp1:sel<=model_1;
+                model_temp2:sel<=model_2;
+                model_temp3:
+                    begin
+                        sel<=model_3;
+                        Y_out<=Special;
+                    end
+                model_temp4:sel<=model_4;
                 default:sel<=model_1; 
             endcase
         end
@@ -131,10 +215,13 @@ module Running_Light (
                     end
                 else
                     begin
+                        model_repeat<=(model_repeat+1);
                         state_exist<=0;
                         count_rst<=0;
                     end
         end
+
+
 
     assign Y=Y_out;
     

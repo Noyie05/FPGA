@@ -95,11 +95,11 @@ module Trotter(
                         case(repeat_2)
                            0:
                              begin
-                                 my_task_model3(count,~Special,Y,repeat_7,repeat_2,Count_time,sel,model_temp3);
+                                 my_task_model3(count,Special,Y,repeat_7,repeat_2,Count_time,sel,model_temp3);
                              end
                            1:    
                              begin
-                                 my_task_model3(count,~Special,Y,repeat_7,repeat_2,Count_time,sel,model_4);
+                                 my_task_model3(count,Special,Y,repeat_7,repeat_2,Count_time,sel,model_4);
                                  repeat_2<=0;
                              end
                         endcase
