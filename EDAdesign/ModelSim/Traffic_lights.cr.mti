@@ -1,0 +1,15 @@
+D:/Project/FPGA/FPGA/EDAdesign/Vivado/Traffic_lights/Traffic_lights.srcs/sources_1/new/Traffic_lights_top.v {1 {vlog -work Traffic_lights -vopt D:/Project/FPGA/FPGA/EDAdesign/Vivado/Traffic_lights/Traffic_lights.srcs/sources_1/new/Traffic_lights_top.v
+Model Technology ModelSim SE-64 vlog 10.2c Compiler 2013.07 Jul 19 2013
+-- Compiling module Traffic_lights_top
+
+Top level modules:
+	Traffic_lights_top
+
+} {} {}} D:/Project/FPGA/FPGA/EDAdesign/Vivado/Traffic_lights/Traffic_lights.srcs/sources_1/new/Traffic_lights.v {1 {vlog -work Traffic_lights -vopt D:/Project/FPGA/FPGA/EDAdesign/Vivado/Traffic_lights/Traffic_lights.srcs/sources_1/new/Traffic_lights.v
+Model Technology ModelSim SE-64 vlog 10.2c Compiler 2013.07 Jul 19 2013
+-- Compiling module Traffic_lights
+
+Top level modules:
+	Traffic_lights
+
+} {} {}}
