@@ -5,11 +5,4 @@ Using 2 slave threads.
 Starting static elaboration
 Pass Through NonSizing Optimizer
 Completed static elaboration
-Starting simulation data flow analysis
-WARNING: [XSIM 43-4099] "D:/Project/FPGA/FPGA/EDAdesign/Vivado/Traffic_lights/Traffic_lights.srcs/sources_1/new/Traffic_lights.v" Line 14. Module Traffic_lights doesn't have a timescale but at least one module in design has a timescale.
-Completed simulation data flow analysis
-Time Resolution for simulation is 1ps
-Compiling module xil_defaultlib.Traffic_lights
-Compiling module xil_defaultlib.Traffic_lights_top
-Compiling module xil_defaultlib.glbl
-Built simulation snapshot Traffic_lights_top_behav
+INFO: [XSIM 43-4323] No Change in HDL. Linking previously generated obj files to create kernel

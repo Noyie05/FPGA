@@ -1,0 +1,50 @@
+m255
+K4
+z2
+13
+cModel Technology
+Z0 dD:/Project/FPGA/FPGA/EDAdesign/ModelSim
+!s112 0.1
+!i10d 8192
+!i10e 25
+!i10f 100
+vTraffic_lights
+Z1 V`JN@9S9cnhjKRR_L]QIcM3
+r1
+!s85 0
+31
+I0i1j@1FLK=OJQ<=zP0JLi2
+Z2 dD:/Project/FPGA/FPGA/EDAdesign/ModelSim
+w1687411655
+8D:/Project/FPGA/FPGA/EDAdesign/Vivado/Traffic_lights/Traffic_lights.srcs/sources_1/new/Traffic_lights.v
+FD:/Project/FPGA/FPGA/EDAdesign/Vivado/Traffic_lights/Traffic_lights.srcs/sources_1/new/Traffic_lights.v
+L0 14
+Z3 OL;L;10.2c;57
+Z4 o-work Traffic_lights -L mtiAvm -L mtiOvm -L mtiUvm -L mtiUPF
+n@traffic_lights
+!i10b 1
+!s100 R@DbkhULT0ZXfBHn]HkOV1
+!s108 1687412341.486000
+!s107 D:/Project/FPGA/FPGA/EDAdesign/Vivado/Traffic_lights/Traffic_lights.srcs/sources_1/new/Traffic_lights.v|
+!s90 -reportprogress|300|-work|Traffic_lights|-vopt|D:/Project/FPGA/FPGA/EDAdesign/Vivado/Traffic_lights/Traffic_lights.srcs/sources_1/new/Traffic_lights.v|
+!i111 0
+vTraffic_lights_top
+R1
+r1
+31
+IG64zdoAko25KNE^HFo0AF0
+R2
+w1687148781
+8D:/Project/FPGA/FPGA/EDAdesign/Vivado/Traffic_lights/Traffic_lights.srcs/sources_1/new/Traffic_lights_top.v
+FD:/Project/FPGA/FPGA/EDAdesign/Vivado/Traffic_lights/Traffic_lights.srcs/sources_1/new/Traffic_lights_top.v
+L0 2
+R3
+R4
+n@traffic_lights_top
+!s85 0
+!i10b 1
+!s100 3`RVZHn=]gXPBfWieNe1N0
+!s108 1687412341.323000
+!s107 D:/Project/FPGA/FPGA/EDAdesign/Vivado/Traffic_lights/Traffic_lights.srcs/sources_1/new/Traffic_lights_top.v|
+!s90 -reportprogress|300|-work|Traffic_lights|-vopt|D:/Project/FPGA/FPGA/EDAdesign/Vivado/Traffic_lights/Traffic_lights.srcs/sources_1/new/Traffic_lights_top.v|
+!i111 0

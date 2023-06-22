@@ -1,6 +1,6 @@
 
 { 
-    crc :  12233956407351099816  , 
+    crc :  8930279455322138634  , 
     ccp_crc :  0  , 
     cmdline : " -wto b05205ef5765422a8861796300214d70 --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot Traffic_lights_top_behav xil_defaultlib.Traffic_lights_top xil_defaultlib.glbl" , 
     buildDate : "Nov  6 2019" , 

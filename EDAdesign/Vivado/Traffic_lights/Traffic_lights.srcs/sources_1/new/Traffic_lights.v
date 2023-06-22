@@ -52,9 +52,11 @@ module Traffic_lights (
         case (states)
             model1:
                     begin
-                      if(light_exist==29) 
+                      if(light_exist==30) 
                       begin
                          states<=model2;
+                         East_Lights<=Idle;
+                         West_Lights<=Idle;
                          light_exist<=0;
                          count_rst<=1;
                       end
@@ -76,8 +78,8 @@ module Traffic_lights (
                       end
                       else 
                        begin
-                         East_Lights<=yellow;
-                         West_Lights<=yellow;
+                         East_Lights[1]<=East_Lights[1]^1;
+                         West_Lights[1]<=West_Lights[1]^1;
                          North_Lights<=red;
                          South_Lights<=red;
                        end
@@ -88,6 +90,8 @@ module Traffic_lights (
                       begin
                          states<=model4;
                          light_exist<=0;
+                         North_Lights<=Idle;
+                         South_Lights<=Idle;
                          count_rst<=1;
                       end
                       else 
@@ -110,8 +114,8 @@ module Traffic_lights (
                        begin
                          East_Lights<=red;
                          West_Lights<=red;
-                         North_Lights<=yellow;
-                         South_Lights<=yellow;
+                         North_Lights[1]<=North_Lights[1]^1;
+                         South_Lights[1]<=South_Lights[1]^1;
                        end
                     end  
             default: states<=model1;
@@ -124,7 +128,7 @@ module Traffic_lights (
       if(sys_rst) 
          if (!count_rst) 
             begin
-               if(light_Counts>=32'd366) 
+               if(light_Counts>=32'd355) 
                   begin
                   light_exist<=(light_exist+1);
                   light_Counts<=0;

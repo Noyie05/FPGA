@@ -1,4 +1,0 @@
-INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Project/FPGA/FPGA/EDAdesign/Vivado/Traffic_lights/Traffic_lights.srcs/sources_1/new/Traffic_lights.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module Traffic_lights
-INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Project/FPGA/FPGA/EDAdesign/Vivado/Traffic_lights/Traffic_lights.srcs/sources_1/new/Traffic_lights_top.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module Traffic_lights_top

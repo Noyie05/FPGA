@@ -1,7 +1,4 @@
-Running: xsim.dir/Traffic_lights_top_behav/xsimk.exe -simmode gui -wdb Traffic_lights_top_behav.wdb -simrunnum 0 -socket 8435
+Running: xsim.dir/Traffic_lights_top_behav/xsimk.exe -simmode gui -wdb Traffic_lights_top_behav.wdb -simrunnum 0 -socket 13038
 Design successfully loaded
-Design Loading Memory Usage: 6416 KB (Peak: 6416 KB)
-Design Loading CPU Usage: 15 ms
-Simulation completed
-Simulation Memory Usage: 12340 KB (Peak: 12340 KB)
-Simulation CPU Usage: 93 ms
+Design Loading Memory Usage: 6424 KB (Peak: 6424 KB)
+Design Loading CPU Usage: 62 ms
