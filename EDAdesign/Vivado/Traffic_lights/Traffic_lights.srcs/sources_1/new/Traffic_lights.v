@@ -12,32 +12,32 @@
 */
 
 module Traffic_lights (
-    input  wire sys_rst,
-    input  wire sys_clk,
-    output reg [2:0] North_Lights,
-    output reg [2:0] South_Lights,
-    output reg [2:0] East_Lights,
-    output reg [2:0] West_Lights,
-    input  wire [2:0] light_states);
+    input  wire sys_rst,               //时钟信号
+    input  wire sys_clk,               //复位信号
+    output reg [2:0] North_Lights,     //面北面灯
+    output reg [2:0] South_Lights,     //面南面灯
+    output reg [2:0] East_Lights,      //面东面灯
+    output reg [2:0] West_Lights,      //面西面灯
+    input  wire [2:0] light_states);   //红绿灯初始状态输入
 
-    reg  [2:0]  states;
-    reg  [31:0] light_Counts;
-    reg  [7:0]  light_exist;
+    reg  [2:0]  states;                //红绿灯状态
+    reg  [31:0] light_Counts;          //计数器计数单位
+    reg  [7:0]  light_exist;           //交通灯持续时间
     reg  count_rst;
 
-    parameter        red=3'b001,
-                  yellow=3'b010,
-                   green=3'b100,
-                    Idle=3'b000; 
+    parameter        red=3'b001,       //红灯
+                  yellow=3'b010,       //黄灯
+                   green=3'b100,       //绿灯
+                    Idle=3'b000;       //不工作状态
 
-    parameter   model1  =3'b000,
+    parameter   model1  =3'b000,       //工作模式1~4
                 model2  =3'b001,
                 model3  =3'b010,
                 model4  =3'b011;
                 
     always @(posedge sys_clk or negedge sys_rst)
     begin
-        if(!sys_rst)
+        if(!sys_rst) //复位信号为0时赋初值
          begin
             states<=light_states;
             light_Counts<=0;
@@ -52,7 +52,7 @@ module Traffic_lights (
         case (states)
             model1:
                     begin
-                      if(light_exist==30) 
+                      if(light_exist==30) //计数上限为30s
                       begin
                          states<=model2;
                          East_Lights<=Idle;
@@ -78,7 +78,7 @@ module Traffic_lights (
                       end
                       else 
                        begin
-                         East_Lights[1]<=East_Lights[1]^1;
+                         East_Lights[1]<=East_Lights[1]^1;//闪烁
                          West_Lights[1]<=West_Lights[1]^1;
                          North_Lights<=red;
                          South_Lights<=red;
@@ -128,7 +128,7 @@ module Traffic_lights (
       if(sys_rst) 
          if (!count_rst) 
             begin
-               if(light_Counts>=32'd355) 
+               if(light_Counts>=32'd355) //每355 计数一次
                   begin
                   light_exist<=(light_exist+1);
                   light_Counts<=0;

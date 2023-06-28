@@ -16,9 +16,9 @@ module Traffic_lights_top();
             #10 sys_rst=~sys_rst;
         end
 
-        always #1 sys_clk=~sys_clk;
+        always #1 sys_clk=~sys_clk;     //每20ms一个周期
 
-        Traffic_lights Traffic_lights
+        Traffic_lights Traffic_lights   //模块实例化
         (
             .sys_rst(sys_rst),
             .sys_clk(sys_clk),
