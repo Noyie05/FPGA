@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Vivado v2019.2 (64-bit)
+# SW Build 2708876 on Wed Nov  6 21:40:23 MST 2019
+# IP Build 2700528 on Thu Nov  7 00:09:20 MST 2019
+# Start of session at: Sat Jul  1 16:01:36 2023
+# Process ID: 22660
+# Current directory: D:/Project/FPGA/FPGA/Zynq7020/ram_test/ram_test.runs/ram_ip_synth_1
+# Command line: vivado.exe -log ram_ip.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source ram_ip.tcl
+# Log file: D:/Project/FPGA/FPGA/Zynq7020/ram_test/ram_test.runs/ram_ip_synth_1/ram_ip.vds
+# Journal file: D:/Project/FPGA/FPGA/Zynq7020/ram_test/ram_test.runs/ram_ip_synth_1\vivado.jou
+#-----------------------------------------------------------
+source ram_ip.tcl -notrace
