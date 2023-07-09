@@ -1,0 +1,4 @@
+Running: xsim.dir/led1to4_top_behav/xsimk.exe -simmode gui -wdb led1to4_top_behav.wdb -simrunnum 0 -socket 11277
+Design successfully loaded
+Design Loading Memory Usage: 6504 KB (Peak: 6504 KB)
+Design Loading CPU Usage: 62 ms
