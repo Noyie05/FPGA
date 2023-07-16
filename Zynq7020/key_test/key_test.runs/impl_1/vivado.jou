@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Vivado v2019.2 (64-bit)
+# SW Build 2708876 on Wed Nov  6 21:40:23 MST 2019
+# IP Build 2700528 on Thu Nov  7 00:09:20 MST 2019
+# Start of session at: Sun Jul 16 23:14:21 2023
+# Process ID: 2480
+# Current directory: D:/Project/FPGA/FPGA/Zynq7020/key_test/key_test.runs/impl_1
+# Command line: vivado.exe -log key_test.vdi -applog -product Vivado -messageDb vivado.pb -mode batch -source key_test.tcl -notrace
+# Log file: D:/Project/FPGA/FPGA/Zynq7020/key_test/key_test.runs/impl_1/key_test.vdi
+# Journal file: D:/Project/FPGA/FPGA/Zynq7020/key_test/key_test.runs/impl_1\vivado.jou
+#-----------------------------------------------------------
+source key_test.tcl -notrace
