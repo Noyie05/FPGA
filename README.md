@@ -8,7 +8,7 @@ Matlab联合仿真学习：Vivado+Modelsim+Matlab
 EDA课程大作业放在.\EDAdesign下，仅供参考
 .\Zynq7020为本人FPGA烧录Project集合
 .\DIP为本人进行FPGA和Matlab联合仿真集合，仅供参考
-.\reference为本人学习使用的素材和书籍集合
+.\Reference为本人学习使用的素材和书籍集合
 
 FPGA-learning Digital-IC-front-end-learning Verilog ModelSim  
 Simulation learning: Quatrus II+ModelSim  
