@@ -1,6 +1,0 @@
-# do {.\run.do} 
-# ** Error: error copying "../modelsim.ini": no such file or directory
-# Error in macro ././run.do line 1
-# error copying "../modelsim.ini": no such file or directory
-#     while executing
-# "file copy -force ../modelsim.ini modelsim.ini"

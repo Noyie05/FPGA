@@ -1,4 +1,0 @@
-INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/Project/FPGA/FPGA/DIP/YCbCr/scripts/testbench.sv" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module testbench
-INFO: [VRFC 10-2458] undeclared symbol sys_clk, assumed default net type wire [D:/Project/FPGA/FPGA/DIP/YCbCr/scripts/testbench.sv:133]
-INFO: [VRFC 10-2458] undeclared symbol sys_rst, assumed default net type wire [D:/Project/FPGA/FPGA/DIP/YCbCr/scripts/testbench.sv:134]

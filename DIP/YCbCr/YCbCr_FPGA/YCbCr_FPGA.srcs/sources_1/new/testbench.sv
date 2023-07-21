@@ -1,24 +1,24 @@
 `timescale  1ns/1ns
 module testbench;
 
-localparam image_width  = 640;
-localparam image_height = 480;
+localparam image_width  = 512;
+localparam image_height = 512;
 //----------------------------------------------------------------------
-//  clk & rst_n
-reg                             clk;
-reg                             rst_n;
+//  sys_clk  & sys_rst
+reg                             sys_clk ;
+reg                             sys_rst;
 
 initial
 begin
-    clk = 1'b0;
-    forever #5 clk = ~clk;
+    sys_clk  = 1'b0;
+    forever #5 sys_clk  = ~sys_clk ;
 end
 
 initial
 begin
-    rst_n = 1'b0;
-    repeat(50) @(posedge clk);
-    rst_n = 1'b1;
+    sys_rst = 1'b0;
+    repeat(50) @(posedge sys_clk );
+    sys_rst = 1'b1;
 end
 
 //----------------------------------------------------------------------
@@ -42,33 +42,33 @@ task image_input;
     bit             [31:0]      row_cnt;
     bit             [31:0]      col_cnt;
     bit             [7:0]       mem     [image_width*image_height*3-1:0];
-    $readmemh("../../../../1_Matlab_Project/2_VIP_RGB888_to_YCbCr444/img_RGB.dat",mem);
+    $readmemh("../../../../YCbCr_FPGA.per/img_RGB.dat",mem);
     
     for(row_cnt = 0;row_cnt < image_height;row_cnt++)
     begin
-        repeat(5) @(posedge clk);
+        repeat(5) @(posedge sys_clk );
         per_img_vsync = 1'b1;
-        repeat(5) @(posedge clk);
+        repeat(5) @(posedge sys_clk );
         for(col_cnt = 0;col_cnt < image_width;col_cnt++)
         begin
             per_img_href  = 1'b1;
             per_img_red   = mem[(row_cnt*image_width+col_cnt)*3+0];
             per_img_green = mem[(row_cnt*image_width+col_cnt)*3+1];
             per_img_blue  = mem[(row_cnt*image_width+col_cnt)*3+2];
-            @(posedge clk);
+            @(posedge sys_clk );
         end
         per_img_href  = 1'b0;
     end
     per_img_vsync = 1'b0;
-    @(posedge clk);
+    @(posedge sys_clk );
     
 endtask : image_input
 
 reg                             post_img_vsync_r;
 
-always @(posedge clk)
+always @(posedge sys_clk )
 begin
-    if(rst_n == 1'b0)
+    if(sys_rst == 1'b0)
         post_img_vsync_r <= 1'b0;
     else
         post_img_vsync_r <= post_img_vsync;
@@ -87,11 +87,11 @@ task image_result_check;
     bit         [ 7:0]          mem     [image_width*image_height*3-1:0];
     
     frame_flag = 0;
-    $readmemh("../../../../1_Matlab_Project/2_VIP_RGB888_to_YCbCr444/img_YCbCr.dat",mem);
+    $readmemh("../../../../YCbCr_FPGA.per/img_YCbCr.dat",mem);
     
     while(1)
     begin
-        @(posedge clk);
+        @(posedge sys_clk );
         if(post_img_vsync_pos == 1'b1)
         begin
             frame_flag = 1;
@@ -127,11 +127,11 @@ task image_result_check;
 endtask : image_result_check
 
 //----------------------------------------------------------------------
-VIP_RGB888_YCbCr444 u_VIP_RGB888_YCbCr444
+RGBtoYCbCr RGBtoYCbCr
 (
     //  global clock
-    .clk            (clk            ),
-    .rst_n          (rst_n          ),
+    .sys_clk          (sys_clk        ),
+    .sys_rst          (sys_rst        ),
     
     //  Image data prepred to be processed
     .per_img_vsync  (per_img_vsync  ),
@@ -159,10 +159,10 @@ end
 
 initial 
 begin
-    wait(rst_n);
+    wait(sys_rst);
     fork
         begin 
-            repeat(5) @(posedge clk); 
+            repeat(5) @(posedge sys_clk ); 
             image_input;
         end 
         image_result_check;

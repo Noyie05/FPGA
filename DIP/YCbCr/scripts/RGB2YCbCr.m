@@ -71,5 +71,3 @@ clc;
     end
     fclose(fid);
     close(bar);
-
-    RGB2YCbCr_Data_Gen(IMG1,IMG_YCbCr);
