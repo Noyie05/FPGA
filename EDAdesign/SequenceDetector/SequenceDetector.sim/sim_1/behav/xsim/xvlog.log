@@ -1,0 +1,7 @@
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Project/FPGA/FPGA/EDAdesign/SequenceDetector/SequenceDetector.srcs/sources_1/new/detector.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module detector
+WARNING: [VRFC 10-3676] redeclaration of ansi port 'z' is not allowed [D:/Project/FPGA/FPGA/EDAdesign/SequenceDetector/SequenceDetector.srcs/sources_1/new/detector.v:11]
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Project/FPGA/FPGA/EDAdesign/SequenceDetector/SequenceDetector.srcs/sources_1/new/detector_top.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module detector_top
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Project/FPGA/FPGA/EDAdesign/SequenceDetector/SequenceDetector.sim/sim_1/behav/xsim/glbl.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module glbl
