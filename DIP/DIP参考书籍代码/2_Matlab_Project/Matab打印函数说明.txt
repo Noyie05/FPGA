@@ -1,0 +1,32 @@
+Matab打印函数说明：
+
+打印函数1：RGB输入，YCbCr输出
+	RGB2YCbCr_Data_Gen(uinit8 img_RGB, uint8 img_YCbCr)
+	img_RGB：输入待处理的RGB图像
+	img_YCbCr：输入处理后的YCbCr图像
+	img_RGB.dat：输出 待处理的RGB图像hex数据（比对源数据）
+	img_YCbCr.dat：输出处理完的YCbCr图像hex数据（比对结果）
+
+
+打印函数2：Gray输入，Gray输出
+Gray2Gray_Data_Gen(uint8 img_Gray1, uint8 img_Gray2)
+	img_Gray1：输入待处理的灰度图像
+	img_Gray2：输入处理后的灰度图像
+	img_Gray1.dat：输出待处理的灰度图像hex数据（比对源数据）
+	img_Gray2.dat：输出处理完的灰度图像hex数据（比对结果）
+
+
+打印函数3：Gray输入，Bin输出
+Gray2Bin_Data_Gen(uint8 img_Gray，uint8 img_Bin)
+	img_Gray：输入待处理的灰度图像
+	img_Bin：输入处理后的二值化数据图像
+	img_Gray.dat：输入待处理的灰度图像hex数据（比对源数据）
+	img_Bin.dat：输入处理完的二值化图像bin数据（比对结果）
+
+
+打印函数4：Bin输入，Bin输出
+Bin2Bin_Data_Gen(uint8 img_Bin1，uint8 img_Bin2)
+	img_Bin1，输入待处理的灰度图像
+	img_Bin2：输入处理后的二值化数据图像
+	img_Bin1.dat：输入待处理的二值化图像bin数据（比对源数据）
+	img_Bin2.dat：输入处理完的二值化图像bin数据（比对结果）
