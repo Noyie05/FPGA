@@ -1,4 +1,4 @@
-module YCbCrtoRGB(
+module RGBtoYCbCr(
     input sys_clk,
     input sys_rst,
 //per_*为预处理数据 post_*为已处理数据

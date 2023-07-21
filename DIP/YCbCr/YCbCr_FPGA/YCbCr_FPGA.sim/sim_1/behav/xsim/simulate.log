@@ -1,0 +1,4 @@
+Vivado Simulator 2019.2
+Time resolution is 1 ps
+WARNING: File D:ProjectFPGAFPGADIPYCbCrscriptsimg_YCbCr.dat referenced on D:/Project/FPGA/FPGA/DIP/YCbCr/scripts/testbench.sv at line 90 cannot be opened for reading. Please ensure that this file is available in the current working directory.
+WARNING: File D:ProjectFPGAFPGADIPYCbCrscriptsimg_RGB.dat referenced on D:/Project/FPGA/FPGA/DIP/YCbCr/scripts/testbench.sv at line 45 cannot be opened for reading. Please ensure that this file is available in the current working directory.
