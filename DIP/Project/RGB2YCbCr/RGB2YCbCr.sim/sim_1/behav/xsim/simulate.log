@@ -36,4 +36,6 @@ result error ---> row_num : 1;col_num : 32;pixel data(y cb cr) : (8c 21 87);refe
 result error ---> row_num : 1;col_num : 33;pixel data(y cb cr) : (8f 21 79);reference data(y cb cr) : (de d8 e7)
 result error ---> row_num : 1;col_num : 34;pixel data(y cb cr) : (8c 21 87);reference data(y cb cr) : (db ea ca)
 result error ---> row_num : 1;col_num : 35;pixel data(y cb cr) : (8f 21 79);reference data(y cb cr) : (d9 c9 d8)
-result error ---> row_num : 1;col_num : 36;pixel 
+result error ---> row_num : 1;col_num : 36;pixel data(y cb cr) : (8c 21 87);reference data(y cb cr) : (ce dd c9)
+result error ---> row_num : 1;col_num : 37;pixel data(y cb cr) : (8f 21 78);reference data(y cb cr) : (d8 c8 d7)
+result error ---> row_num : 1;col_num : 38;pixel data(y cb cr) : (8c 21 88);reference data(y cb cr) : (bc cb ca)
