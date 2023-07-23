@@ -42,8 +42,7 @@ task image_input;
     bit             [31:0]      row_cnt;
     bit             [31:0]      col_cnt;
     bit             [7:0]       mem     [image_width*image_height*3-1:0];
-    $readmemh("../../../../Scripts/img_RGB.dat",mem);
-    
+    $readmemh("../../../../../Scripts/img_RGB.dat",mem);
     for(row_cnt = 0;row_cnt < image_height;row_cnt++)
     begin
         repeat(5) @(posedge sys_clk);
@@ -88,7 +87,6 @@ task image_result_check;
     
     frame_flag = 0;
     $readmemh("../../../../../Scripts/img_YCbCr.dat",mem);
-    
     while(1)
     begin
         @(posedge sys_clk);

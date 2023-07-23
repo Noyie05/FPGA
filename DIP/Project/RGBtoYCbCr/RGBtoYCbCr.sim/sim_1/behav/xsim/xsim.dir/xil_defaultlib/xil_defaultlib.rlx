@@ -1,8 +1,0 @@
-0.6
-2019.2
-Nov  6 2019
-21:57:16
-D:/Project/FPGA/FPGA/DIP/Project/RGBtoYCbCr/RGBtoYCbCr.sim/sim_1/behav/xsim/glbl.v,1573089660,verilog,,,,glbl,,,,,,,,
-D:/Project/FPGA/FPGA/DIP/Project/RGBtoYCbCr/RGBtoYCbCr.src/RGBtoYCbCr.v,1689938097,verilog,,,,RGBtoYCbCr,,,,,,,,
-D:/Project/FPGA/FPGA/DIP/Project/RGBtoYCbCr/RGBtoYCbCr.src/VIP_RGB888_YCbCr444.v,1690087392,verilog,,,,VIP_RGB888_YCbCr444,,,,,,,,
-D:/Project/FPGA/FPGA/DIP/Project/RGBtoYCbCr/RGBtoYCbCr.src/testbench.sv,1690095311,systemVerilog,,,,testbench,,,,,,,,
