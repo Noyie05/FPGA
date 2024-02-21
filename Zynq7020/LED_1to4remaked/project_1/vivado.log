@@ -1,0 +1,29 @@
+#-----------------------------------------------------------
+# Vivado v2019.2 (64-bit)
+# SW Build 2708876 on Wed Nov  6 21:40:23 MST 2019
+# IP Build 2700528 on Thu Nov  7 00:09:20 MST 2019
+# Start of session at: Sun Feb  4 22:59:48 2024
+# Process ID: 10976
+# Current directory: D:/Project/FPGA/FPGA/Zynq7020/LED_1to4remaked/project_1
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent4136 D:\Project\FPGA\FPGA\Zynq7020\LED_1to4remaked\project_1\project_1.xpr
+# Log file: D:/Project/FPGA/FPGA/Zynq7020/LED_1to4remaked/project_1/vivado.log
+# Journal file: D:/Project/FPGA/FPGA/Zynq7020/LED_1to4remaked/project_1\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project D:/Project/FPGA/FPGA/Zynq7020/LED_1to4remaked/project_1/project_1.xpr
+Scanning sources...
+Finished scanning sources
+WARNING: [filemgmt 56-3] IPUserFilesDir: Could not find the directory 'D:/Project/FPGA/FPGA/Zynq7020/LED_1to4remaked/project_1/project_1.ip_user_files'.
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'D:/Software/Vivado/Vivado/2019.2/data/ip'.
+open_project: Time (s): cpu = 00:00:19 ; elapsed = 00:00:08 . Memory (MB): peak = 924.270 ; gain = 225.465
+update_compile_order -fileset sources_1
+launch_runs impl_1 -to_step write_bitstream -jobs 5
+[Sun Feb  4 23:01:55 2024] Launched impl_1...
+Run output will be captured here: D:/Project/FPGA/FPGA/Zynq7020/LED_1to4remaked/project_1/project_1.runs/impl_1/runme.log
+reset_run impl_1
+INFO: [Common 17-41] Interrupt caught. Command should exit soon.
+INFO: [Common 17-344] 'reset_runs' was cancelled
+exit
+INFO: [Common 17-206] Exiting Vivado at Sun Feb  4 23:02:15 2024...

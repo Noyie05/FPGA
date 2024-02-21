@@ -24,7 +24,7 @@ else
 fi
 export LD_LIBRARY_PATH
 
-HD_PWD='F:/FPGA/FPGA/LED_1to4/LED_1to4.runs/synth_1'
+HD_PWD='D:/Project/FPGA/FPGA/Zynq7020/LED_1to4/LED_1to4.runs/synth_1'
 cd "$HD_PWD"
 
 HD_LOG=runme.log

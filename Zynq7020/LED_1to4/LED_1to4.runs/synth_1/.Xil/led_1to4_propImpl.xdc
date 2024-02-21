@@ -1,4 +1,4 @@
-set_property SRC_FILE_INFO {cfile:F:/FPGA/FPGA/LED_1to4/LED_1to4.srcs/constrs_1/new/led.xdc rfile:../../../LED_1to4.srcs/constrs_1/new/led.xdc id:1} [current_design]
+set_property SRC_FILE_INFO {cfile:D:/Project/FPGA/FPGA/Zynq7020/LED_1to4/LED_1to4.srcs/constrs_1/new/led.xdc rfile:../../../LED_1to4.srcs/constrs_1/new/led.xdc id:1} [current_design]
 set_property src_info {type:XDC file:1 line:2 export:INPUT save:INPUT read:READ} [current_design]
 set_property PACKAGE_PIN J16 [get_ports {led[3]}]
 set_property src_info {type:XDC file:1 line:3 export:INPUT save:INPUT read:READ} [current_design]

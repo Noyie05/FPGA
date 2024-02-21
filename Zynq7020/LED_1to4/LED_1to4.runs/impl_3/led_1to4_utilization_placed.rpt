@@ -1,7 +1,7 @@
 Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2019.2 (win64) Build 2708876 Wed Nov  6 21:40:23 MST 2019
-| Date         : Sun Jun  4 14:08:34 2023
+| Date         : Sun Feb  4 21:50:30 2024
 | Host         : 404NOTFOUND running 64-bit major release  (build 9200)
 | Command      : report_utilization -file led_1to4_utilization_placed.rpt -pb led_1to4_utilization_placed.pb
 | Design       : led_1to4

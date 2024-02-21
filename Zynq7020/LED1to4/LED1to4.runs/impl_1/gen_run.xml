@@ -1,43 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <GenRun Id="impl_1" LaunchPart="xc7z020clg400-2" LaunchTime="1688833885">
-  <File Type="BITSTR-BMM" Name="led1to4_bd.bmm"/>
-  <File Type="OPT-METHODOLOGY-DRC" Name="led1to4_methodology_drc_opted.rpt"/>
-  <File Type="INIT-TIMING" Name="led1to4_timing_summary_init.rpt"/>
   <File Type="ROUTE-PWR" Name="led1to4_power_routed.rpt"/>
   <File Type="PA-TCL" Name="led1to4.tcl"/>
-  <File Type="OPT-TIMING" Name="led1to4_timing_summary_opted.rpt"/>
-  <File Type="OPT-DCP" Name="led1to4_opt.dcp"/>
+  <File Type="BITSTR-BMM" Name="led1to4_bd.bmm"/>
   <File Type="ROUTE-PWR-SUM" Name="led1to4_power_summary_routed.pb"/>
   <File Type="REPORTS-TCL" Name="led1to4_reports.tcl"/>
+  <File Type="OPT-DCP" Name="led1to4_opt.dcp"/>
   <File Type="OPT-DRC" Name="led1to4_drc_opted.rpt"/>
   <File Type="OPT-HWDEF" Name="led1to4.hwdef"/>
   <File Type="PWROPT-DCP" Name="led1to4_pwropt.dcp"/>
-  <File Type="PWROPT-DRC" Name="led1to4_drc_pwropted.rpt"/>
-  <File Type="PWROPT-TIMING" Name="led1to4_timing_summary_pwropted.rpt"/>
   <File Type="PLACE-DCP" Name="led1to4_placed.dcp"/>
   <File Type="PLACE-IO" Name="led1to4_io_placed.rpt"/>
-  <File Type="PLACE-CLK" Name="led1to4_clock_utilization_placed.rpt"/>
   <File Type="PLACE-UTIL" Name="led1to4_utilization_placed.rpt"/>
   <File Type="PLACE-UTIL-PB" Name="led1to4_utilization_placed.pb"/>
   <File Type="PLACE-CTRL" Name="led1to4_control_sets_placed.rpt"/>
-  <File Type="PLACE-SIMILARITY" Name="led1to4_incremental_reuse_placed.rpt"/>
   <File Type="PLACE-PRE-SIMILARITY" Name="led1to4_incremental_reuse_pre_placed.rpt"/>
-  <File Type="PLACE-TIMING" Name="led1to4_timing_summary_placed.rpt"/>
   <File Type="POSTPLACE-PWROPT-DCP" Name="led1to4_postplace_pwropt.dcp"/>
   <File Type="BG-BIN" Name="led1to4.bin"/>
-  <File Type="POSTPLACE-PWROPT-TIMING" Name="led1to4_timing_summary_postplace_pwropted.rpt"/>
   <File Type="PHYSOPT-DCP" Name="led1to4_physopt.dcp"/>
-  <File Type="PHYSOPT-DRC" Name="led1to4_drc_physopted.rpt"/>
   <File Type="BITSTR-MSK" Name="led1to4.msk"/>
-  <File Type="PHYSOPT-TIMING" Name="led1to4_timing_summary_physopted.rpt"/>
   <File Type="ROUTE-ERROR-DCP" Name="led1to4_routed_error.dcp"/>
   <File Type="ROUTE-DCP" Name="led1to4_routed.dcp"/>
   <File Type="ROUTE-BLACKBOX-DCP" Name="led1to4_routed_bb.dcp"/>
   <File Type="ROUTE-DRC" Name="led1to4_drc_routed.rpt"/>
   <File Type="ROUTE-DRC-PB" Name="led1to4_drc_routed.pb"/>
   <File Type="ROUTE-DRC-RPX" Name="led1to4_drc_routed.rpx"/>
-  <File Type="BITSTR-MMI" Name="led1to4.mmi"/>
   <File Type="ROUTE-METHODOLOGY-DRC" Name="led1to4_methodology_drc_routed.rpt"/>
+  <File Type="BITSTR-MMI" Name="led1to4.mmi"/>
   <File Type="ROUTE-METHODOLOGY-DRC-RPX" Name="led1to4_methodology_drc_routed.rpx"/>
   <File Type="ROUTE-METHODOLOGY-DRC-PB" Name="led1to4_methodology_drc_routed.pb"/>
   <File Type="ROUTE-PWR-RPX" Name="led1to4_power_routed.rpx"/>
@@ -46,20 +35,13 @@
   <File Type="ROUTE-TIMINGSUMMARY" Name="led1to4_timing_summary_routed.rpt"/>
   <File Type="ROUTE-TIMING-PB" Name="led1to4_timing_summary_routed.pb"/>
   <File Type="ROUTE-TIMING-RPX" Name="led1to4_timing_summary_routed.rpx"/>
-  <File Type="ROUTE-SIMILARITY" Name="led1to4_incremental_reuse_routed.rpt"/>
   <File Type="ROUTE-CLK" Name="led1to4_clock_utilization_routed.rpt"/>
   <File Type="ROUTE-BUS-SKEW" Name="led1to4_bus_skew_routed.rpt"/>
   <File Type="ROUTE-BUS-SKEW-PB" Name="led1to4_bus_skew_routed.pb"/>
   <File Type="ROUTE-BUS-SKEW-RPX" Name="led1to4_bus_skew_routed.rpx"/>
   <File Type="POSTROUTE-PHYSOPT-DCP" Name="led1to4_postroute_physopt.dcp"/>
   <File Type="POSTROUTE-PHYSOPT-BLACKBOX-DCP" Name="led1to4_postroute_physopt_bb.dcp"/>
-  <File Type="POSTROUTE-PHYSOPT-TIMING" Name="led1to4_timing_summary_postroute_physopted.rpt"/>
-  <File Type="POSTROUTE-PHYSOPT-TIMING-PB" Name="led1to4_timing_summary_postroute_physopted.pb"/>
-  <File Type="POSTROUTE-PHYSOPT-TIMING-RPX" Name="led1to4_timing_summary_postroute_physopted.rpx"/>
-  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW" Name="led1to4_bus_skew_postroute_physopted.rpt"/>
-  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW-PB" Name="led1to4_bus_skew_postroute_physopted.pb"/>
   <File Type="BG-BIT" Name="led1to4.bit"/>
-  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW-RPX" Name="led1to4_bus_skew_postroute_physopted.rpx"/>
   <File Type="BITSTR-RBT" Name="led1to4.rbt"/>
   <File Type="BITSTR-NKY" Name="led1to4.nky"/>
   <File Type="PDI-FILE" Name="led1to4.pdi"/>
@@ -68,7 +50,6 @@
   <File Type="RNPI_FILE" Name="led1to4.rnpi"/>
   <File Type="NPI_FILE" Name="led1to4.npi"/>
   <File Type="RBD_FILE" Name="led1to4.rbd"/>
-  <File Type="BITSTR-LTX" Name="debug_nets.ltx"/>
   <File Type="BITSTR-LTX" Name="led1to4.ltx"/>
   <File Type="BITSTR-SYSDEF" Name="led1to4.sysdef"/>
   <File Type="BG-BGN" Name="led1to4.bgn"/>
@@ -110,9 +91,7 @@
     </Config>
   </FileSet>
   <Strategy Version="1" Minor="2">
-    <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2019">
-      <Desc>Default settings for Implementation.</Desc>
-    </StratHandle>
+    <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2019"/>
     <Step Id="init_design"/>
     <Step Id="opt_design"/>
     <Step Id="power_opt_design"/>

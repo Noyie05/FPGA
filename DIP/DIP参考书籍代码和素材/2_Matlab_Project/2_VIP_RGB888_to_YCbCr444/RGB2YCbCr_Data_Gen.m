@@ -28,10 +28,10 @@ for row = 1 : h1
     fprintf(fid,'%s',str_data_tmp);
     waitbar(row/h1);
 end
-fclose(fid);
+fclose(fid); 
 close(bar);   % Close waitbar
 
-
+ 
 % -------------------------------------------------------------------------
 % Simulation Target Data Generate
 bar = waitbar(0,'Speed of target data generating...');  %Creat process bar

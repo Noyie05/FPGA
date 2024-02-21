@@ -24,7 +24,7 @@ else
 fi
 export LD_LIBRARY_PATH
 
-HD_PWD='F:/FPGA/FPGA/LED_1to4/LED_1to4.runs/impl_3'
+HD_PWD='D:/Project/FPGA/FPGA/Zynq7020/LED_1to4/LED_1to4.runs/impl_3'
 cd "$HD_PWD"
 
 HD_LOG=runme.log
@@ -41,7 +41,7 @@ EAStep()
 }
 
 # pre-commands:
-/bin/touch .init_design.begin.rst
+/bin/touch .write_bitstream.begin.rst
 EAStep vivado -log led_1to4.vdi -applog -m64 -product Vivado -messageDb vivado.pb -mode batch -source led_1to4.tcl -notrace
 
 
