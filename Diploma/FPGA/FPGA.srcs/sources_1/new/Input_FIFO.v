@@ -1,4 +1,4 @@
+localparam Photos_height = 12'd412;
+localparam Photos_width  = 12'd3;
 
-
-localparam Photos_height 412
-localparam Photos_width 3
+reg [] bit_RGB  
